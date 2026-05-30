@@ -69,6 +69,14 @@ src/
 - Root directory: `/`
 - Node.js version: `20` 或更高
 
+仓库也包含 `wrangler.toml`，其中声明了 Pages 输出目录：
+
+```toml
+pages_build_output_dir = "./dist"
+```
+
+如果线上仍显示旧页面，请在 Cloudflare Pages 项目中确认没有使用“直接上传/根目录发布”，并重新部署最新提交。
+
 如果需要显式指定 Node 版本，可在 Cloudflare Pages 的环境变量中添加：
 
 ```text
