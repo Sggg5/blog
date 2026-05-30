@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCategories, getPostSlug, getPublishedPosts } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return getCategories(posts).map(([category]) => ({
+    params: { category },
+    props: { category, posts: posts.filter((post) => post.data.category === category) },
+  }));
+}
+
+const { category, posts } = Astro.props;
+---
+
+<BaseLayout title={`分类：${category}`}>
+  <section class="listing-page">
+    <p class="eyebrow">Category</p>
+    <h1>{category}</h1>
+    <div class="post-list compact">
+      {posts.map((post) => (
+        <article class="post-card">
+          <a href={`/blog/${getPostSlug(post.id)}/`}>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('zh-CN')}
+            </time>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

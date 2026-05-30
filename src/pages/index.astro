@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCategories, getPostSlug, getPublishedPosts, getTags } from '../lib/blog';
+
+const posts = await getPublishedPosts();
+const categories = getCategories(posts);
+const tags = getTags(posts);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Pipeline technology journal</p>
+      <h1>FRANTA技术博客</h1>
+      <p>不锈钢管道 · 工艺研发 · 质量管理 · 水务工程</p>
+    </div>
+    <div class="hero-panel" aria-label="博客数据概览">
+      <span>Articles</span>
+      <strong>{posts.length.toString().padStart(2, '0')}</strong>
+      <small>工艺、质量与工程现场记录</small>
+    </div>
+  </section>
+
+  <section class="content-grid">
+    <div class="post-list">
+      <div class="section-heading">
+        <p class="eyebrow">Latest writing</p>
+        <h2>文章列表</h2>
+      </div>
+      {posts.map((post) => (
+        <article class="post-card">
+          <a href={`/blog/${getPostSlug(post.id)}/`}>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('zh-CN')}
+            </time>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <div class="meta-row">
+              <span>{post.data.category}</span>
+              {post.data.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <aside class="rail">
+      <div class="rail-block">
+        <h2>分类</h2>
+        <div class="chip-list">
+          {categories.map(([category, count]) => (
+            <a href={`/categories/${category}/`}>{category}<span>{count}</span></a>
+          ))}
+        </div>
+      </div>
+      <div class="rail-block">
+        <h2>标签</h2>
+        <div class="chip-list">
+          {tags.map(([tag, count]) => (
+            <a href={`/tags/${tag}/`}>{tag}<span>{count}</span></a>
+          ))}
+        </div>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

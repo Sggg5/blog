@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPostSlug, getPublishedPosts, getTags } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return getTags(posts).map(([tag]) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout title={`标签：${tag}`}>
+  <section class="listing-page">
+    <p class="eyebrow">Tag</p>
+    <h1>{tag}</h1>
+    <div class="post-list compact">
+      {posts.map((post) => (
+        <article class="post-card">
+          <a href={`/blog/${getPostSlug(post.id)}/`}>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('zh-CN')}
+            </time>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

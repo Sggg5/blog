@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const siteTitle = 'FRANTA技术博客';
+const siteDescription = '不锈钢管道 · 工艺研发 · 质量管理 · 水务工程';
+const { title = siteTitle, description = siteDescription } = Astro.props;
+const pageTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/">
+          <span class="brand-mark">F</span>
+          <span>
+            <strong>{siteTitle}</strong>
+            <small>{siteDescription}</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="/">文章</a>
+          <a href="/categories/">分类</a>
+          <a href="/tags/">标签</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <span>FRANTA Engineering Notes</span>
+        <span>Built with Astro, ready for Cloudflare Pages.</span>
+      </footer>
+    </div>
+  </body>
+</html>

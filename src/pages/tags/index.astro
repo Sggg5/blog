@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts, getTags } from '../../lib/blog';
+
+const tags = getTags(await getPublishedPosts());
+---
+
+<BaseLayout title="标签">
+  <section class="listing-page">
+    <p class="eyebrow">Tags</p>
+    <h1>标签</h1>
+    <div class="term-grid">
+      {tags.map(([tag, count]) => (
+        <a class="term-card" href={`/tags/${tag}/`}>
+          <strong>{tag}</strong>
+          <span>{count} 篇文章</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
