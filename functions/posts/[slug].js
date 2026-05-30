@@ -26,11 +26,14 @@ export async function onRequest(context) {
 
   const md = await object.text();
 
-  return new Response(md, {
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "cache-control": "public, max-age=60",
-      etag: object.httpEtag,
-    },
+  const headers = new Headers({
+    "content-type": "text/plain; charset=utf-8",
+    "cache-control": "public, max-age=60",
   });
+
+  if (object.httpEtag) {
+    headers.set("etag", object.httpEtag);
+  }
+
+  return new Response(md, { headers });
 }
