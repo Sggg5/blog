@@ -12,7 +12,7 @@ export async function onRequest(context) {
     return new Response("BLOG_BUCKET binding is not configured", { status: 500 });
   }
 
-  const slug = String(params.slug || "").trim();
+  const slug = decodeURIComponent(String(params.slug || "").trim());
 
   if (!slug) {
     return new Response("缺少文章 slug", { status: 400 });
