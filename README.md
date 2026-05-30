@@ -1,12 +1,13 @@
 # FRANTA技术博客
 
-基于 Astro 的静态技术博客，支持 Markdown 文章、文章详情页、分类、标签，并保持 Cloudflare Pages 静态部署兼容。
+基于 Astro 和 Cloudflare Pages 的技术博客，支持 Markdown 文章、分类、标签，以及 Pages Functions 读取 R2 Markdown 内容。
 
 ## 技术栈
 
 - Astro 6
-- Markdown 内容集合：`src/content/blog`
-- 静态输出目录：`dist`
+- Cloudflare Pages
+- Pages Functions
+- R2 bucket: `blog-content`
 
 ## 本地开发
 
@@ -35,41 +36,71 @@ tags:
 正文内容。
 ```
 
-首页会自动显示文章列表；分类页和标签页会根据 frontmatter 自动生成。
+首页、分类页和标签页会根据 Markdown frontmatter 自动生成。
 
-## 项目结构
+## R2 文章读取
+
+仓库包含 Pages Function：
 
 ```text
-src/
-  content/
-    blog/
-      为什么沟槽接头会漏水.md
-  layouts/
-    BaseLayout.astro
-  lib/
-    blog.ts
-  pages/
-    index.astro
-    blog/[slug].astro
-    categories/index.astro
-    categories/[category].astro
-    tags/index.astro
-    tags/[tag].astro
-  styles/
-    global.css
+functions/posts/[slug].js
 ```
+
+访问：
+
+```text
+/posts/为什么沟槽接头会漏水
+```
+
+会读取 R2 对象：
+
+```text
+posts/为什么沟槽接头会漏水.md
+```
+
+Cloudflare Pages 后台绑定：
+
+```text
+Settings -> Bindings -> R2 bucket bindings
+Variable name: BLOG_BUCKET
+Bucket: blog-content
+```
+
+## GitHub 自动同步到 R2
+
+仓库包含 GitHub Actions workflow：
+
+```text
+.github/workflows/sync-r2.yml
+```
+
+每次 `main` 分支里的 `src/content/blog/**/*.md` 更新后，会上传到：
+
+```text
+R2 bucket: blog-content
+R2 prefix: posts/
+```
+
+需要在 GitHub 仓库 Secrets 中配置：
+
+```text
+CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID
+```
+
+API Token 需要有 R2 对象写入权限。
 
 ## Cloudflare Pages 部署
 
 在 Cloudflare Pages 中连接 GitHub 仓库后，使用以下配置：
 
-- Framework preset: `Astro`
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: `/`
-- Node.js version: `20` 或更高
-
-如果线上仍显示旧页面，请在 Cloudflare Pages 项目中确认没有使用“直接上传/根目录发布”，并重新部署最新提交。
+```text
+Framework preset: Astro
+Build command: npm run build
+Build output directory: dist
+Root directory: /
+Node.js version: 20 或更高
+```
 
 如果需要显式指定 Node 版本，可在 Cloudflare Pages 的环境变量中添加：
 
@@ -82,5 +113,3 @@ NODE_VERSION=20
 ```bash
 npm run build
 ```
-
-构建完成后，Cloudflare Pages 会直接发布 `dist` 目录中的静态文件。
