@@ -165,6 +165,163 @@ a {
   padding: 42px 0 70px;
 }
 
+.home-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 28px;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 46px 0 34px;
+}
+
+.home-intro h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(2.1rem, 4vw, 3.6rem);
+  line-height: 1.08;
+}
+
+.home-intro p {
+  max-width: 660px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.intro-stats {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--surface);
+  text-align: right;
+}
+
+.intro-stats strong,
+.intro-stats span {
+  display: block;
+}
+
+.intro-stats strong {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.intro-stats span {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 36px;
+  padding: 34px 0 70px;
+}
+
+.main-column {
+  min-width: 0;
+}
+
+.compact-heading h2 {
+  font-size: 1.65rem;
+}
+
+.entry-list {
+  display: grid;
+  gap: 18px;
+}
+
+.post-entry {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.post-entry:last-child {
+  border-bottom: 0;
+}
+
+.post-entry a {
+  display: block;
+}
+
+.entry-date {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--warning);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.entry-date span {
+  color: var(--accent-strong);
+}
+
+.post-entry h3 {
+  margin: 10px 0 8px;
+  font-size: 1.55rem;
+}
+
+.post-entry p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.sidebar {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.widget {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--surface);
+  box-shadow: 0 18px 42px rgba(17, 24, 32, 0.06);
+}
+
+.widget h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+}
+
+.featured-link {
+  display: grid;
+  gap: 8px;
+}
+
+.featured-link span {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.term-list {
+  display: grid;
+  gap: 10px;
+}
+
+.term-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.term-list a:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.term-list em {
+  color: var(--muted);
+  font-style: normal;
+}
+
 .section-heading h2,
 .listing-page h1 {
   margin: 8px 0 20px;
@@ -443,6 +600,8 @@ a {
   .site-header,
   .site-footer,
   .content-grid,
+  .blog-layout,
+  .home-intro,
   .hero,
   .editor-grid,
   .field-row {
@@ -471,5 +630,13 @@ a {
 
   .content-grid {
     padding-top: 28px;
+  }
+
+  .home-intro {
+    padding: 34px 0 26px;
+  }
+
+  .intro-stats {
+    text-align: left;
   }
 }
