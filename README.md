@@ -72,6 +72,7 @@ src/
 仓库也包含 `wrangler.toml`，其中声明了 Pages 输出目录：
 
 ```toml
+name = "blog-46j"
 pages_build_output_dir = "./dist"
 ```
 
