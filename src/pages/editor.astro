@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="文章编辑器" description="FRANTA技术博客 Markdown 文章编辑器">
+  <section class="editor-page">
+    <div class="section-heading">
+      <p class="eyebrow">Markdown editor</p>
+      <h1>文章编辑器</h1>
+    </div>
+
+    <div class="editor-grid">
+      <form class="editor-form" id="editor-form">
+        <label>
+          <span>标题</span>
+          <input id="title" name="title" value="新文章标题" />
+        </label>
+        <label>
+          <span>摘要</span>
+          <textarea id="description" name="description" rows="3">这里写一句文章摘要，会显示在首页文章列表。</textarea>
+        </label>
+        <div class="field-row">
+          <label>
+            <span>发布日期</span>
+            <input id="pubDate" name="pubDate" type="date" />
+          </label>
+          <label>
+            <span>分类</span>
+            <input id="category" name="category" value="工艺研发" />
+          </label>
+        </div>
+        <label>
+          <span>标签，用逗号分隔</span>
+          <input id="tags" name="tags" value="不锈钢管道, 质量管理" />
+        </label>
+        <label>
+          <span>正文</span>
+          <textarea id="body" name="body" rows="15">这里写正文。
+
+## 小标题
+
+支持 Markdown 格式。</textarea>
+        </label>
+        <div class="editor-actions">
+          <button type="button" id="copy-btn">复制 Markdown</button>
+          <button type="button" id="download-btn">下载 .md</button>
+          <a class="button-link" href="https://github.com/Sggg5/blog/tree/main/src/content/blog" target="_blank" rel="noreferrer">打开文章目录</a>
+        </div>
+        <p class="editor-note">保存方式：复制或下载 Markdown 后，放到 GitHub 的 <code>src/content/blog</code> 目录并提交，Cloudflare Pages 会自动部署。</p>
+      </form>
+
+      <aside class="preview-panel">
+        <div class="preview-toolbar">
+          <strong>生成内容</strong>
+          <span id="filename">新文章标题.md</span>
+        </div>
+        <pre id="markdown-output"></pre>
+      </aside>
+    </div>
+  </section>
+
+  <script>
+    const fields = {
+      title: document.querySelector('#title'),
+      description: document.querySelector('#description'),
+      pubDate: document.querySelector('#pubDate'),
+      category: document.querySelector('#category'),
+      tags: document.querySelector('#tags'),
+      body: document.querySelector('#body'),
+    };
+    const output = document.querySelector('#markdown-output');
+    const filename = document.querySelector('#filename');
+    const copyBtn = document.querySelector('#copy-btn');
+    const downloadBtn = document.querySelector('#download-btn');
+
+    const today = new Date().toISOString().slice(0, 10);
+    fields.pubDate.value = today;
+
+    const slugify = (value) => value.trim().replace(/[\\/:*?"<>|]/g, '').replace(/\s+/g, '-');
+    const yamlEscape = (value) => value.replaceAll('"', '\\"');
+
+    const buildMarkdown = () => {
+      const tags = fields.tags.value
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+        .map((tag) => `  - ${tag}`)
+        .join('\n');
+
+      const markdown = `---\ntitle: "${yamlEscape(fields.title.value)}"\ndescription: "${yamlEscape(fields.description.value)}"\npubDate: ${fields.pubDate.value || today}\ncategory: ${fields.category.value || '未分类'}\ntags:\n${tags || '  - 未标记'}\n---\n\n${fields.body.value.trim()}\n`;
+
+      output.textContent = markdown;
+      filename.textContent = `${slugify(fields.title.value) || 'new-post'}.md`;
+      return markdown;
+    };
+
+    Object.values(fields).forEach((field) => field.addEventListener('input', buildMarkdown));
+    buildMarkdown();
+
+    copyBtn.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(buildMarkdown());
+      copyBtn.textContent = '已复制';
+      setTimeout(() => {
+        copyBtn.textContent = '复制 Markdown';
+      }, 1400);
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([buildMarkdown()], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename.textContent;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</BaseLayout>
