@@ -7,7 +7,7 @@
 - Astro 6
 - Cloudflare Pages
 - Pages Functions
-- R2 bucket: `blog-content`
+- R2 bucket: 通过 `BLOG_BUCKET` 绑定到你的 R2 bucket
 
 ## 本地开发
 
@@ -63,7 +63,7 @@ Cloudflare Pages 后台绑定：
 ```text
 Settings -> Bindings -> R2 bucket bindings
 Variable name: BLOG_BUCKET
-Bucket: blog-content
+Bucket: 选择你的 R2 bucket
 ```
 
 ## GitHub 自动同步到 R2
@@ -77,7 +77,7 @@ Bucket: blog-content
 每次 `main` 分支里的 `src/content/blog/**/*.md` 更新后，会上传到：
 
 ```text
-R2 bucket: blog-content
+R2 bucket: 使用 GitHub Variables 中的 R2_BUCKET_NAME
 R2 prefix: posts/
 ```
 
@@ -86,6 +86,12 @@ R2 prefix: posts/
 ```text
 CLOUDFLARE_API_TOKEN
 CLOUDFLARE_ACCOUNT_ID
+```
+
+需要在 GitHub 仓库 Variables 中配置：
+
+```text
+R2_BUCKET_NAME
 ```
 
 API Token 需要有 R2 对象写入权限。
