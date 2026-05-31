@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="文章后台" description="FRANTA 技术博客文章后台">
+  <section class="admin-page">
+    <div class="admin-header">
+      <div>
+        <p class="eyebrow">Admin</p>
+        <h1>文章后台</h1>
+        <p>管理 Markdown 文章，保存后会提交到 GitHub 并触发 Cloudflare Pages 部署。</p>
+      </div>
+      <div class="admin-login" id="admin-login">
+        <label>
+          <span>后台密码</span>
+          <input id="admin-password" type="password" autocomplete="current-password" placeholder="ADMIN_PASSWORD" />
+        </label>
+        <button type="button" id="login-btn">进入</button>
+      </div>
+    </div>
+
+    <div class="admin-workspace" id="admin-workspace" hidden>
+      <aside class="post-manager">
+        <div class="manager-toolbar">
+          <strong>文章</strong>
+          <button type="button" id="new-post-btn">新建</button>
+        </div>
+        <div class="post-search">
+          <input id="post-search" type="search" placeholder="搜索标题、分类、标签" />
+        </div>
+        <div class="admin-post-list" id="post-list"></div>
+      </aside>
+
+      <form class="admin-editor" id="admin-form">
+        <div class="editor-status" id="editor-status">选择一篇文章，或新建文章。</div>
+
+        <div class="field-row">
+          <label>
+            <span>标题</span>
+            <input id="title" name="title" required />
+          </label>
+          <label>
+            <span>文件名</span>
+            <input id="filename" name="filename" required />
+          </label>
+        </div>
+
+        <label>
+          <span>摘要</span>
+          <textarea id="description" name="description" rows="3"></textarea>
+        </label>
+
+        <div class="field-row">
+          <label>
+            <span>发布日期</span>
+            <input id="pubDate" name="pubDate" type="date" required />
+          </label>
+          <label>
+            <span>分类</span>
+            <input id="category" name="category" />
+          </label>
+        </div>
+
+        <label>
+          <span>标签，用英文逗号分隔</span>
+          <input id="tags" name="tags" />
+        </label>
+
+        <label class="draft-toggle">
+          <input id="draft" name="draft" type="checkbox" />
+          <span>保存为草稿</span>
+        </label>
+
+        <label>
+          <span>正文</span>
+          <textarea id="body" name="body" rows="22"></textarea>
+        </label>
+
+        <div class="admin-actions">
+          <button type="submit" id="save-btn">发布到 GitHub</button>
+          <button type="button" id="copy-btn">复制 Markdown</button>
+          <button type="button" id="delete-btn" class="danger">删除</button>
+          <a id="commit-link" class="button-link" href="#" target="_blank" rel="noreferrer" hidden>查看提交</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const apiUrl = '/api/admin/posts';
+    const state = {
+      password: localStorage.getItem('blogAdminPassword') || '',
+      posts: [],
+      currentPath: '',
+    };
+
+    const loginPanel = document.querySelector('#admin-login');
+    const workspace = document.querySelector('#admin-workspace');
+    const passwordInput = document.querySelector('#admin-password');
+    const loginBtn = document.querySelector('#login-btn');
+    const list = document.querySelector('#post-list');
+    const search = document.querySelector('#post-search');
+    const form = document.querySelector('#admin-form');
+    const status = document.querySelector('#editor-status');
+    const commitLink = document.querySelector('#commit-link');
+    const newPostBtn = document.querySelector('#new-post-btn');
+    const saveBtn = document.querySelector('#save-btn');
+    const copyBtn = document.querySelector('#copy-btn');
+    const deleteBtn = document.querySelector('#delete-btn');
+    const fields = {
+      title: document.querySelector('#title'),
+      filename: document.querySelector('#filename'),
+      description: document.querySelector('#description'),
+      pubDate: document.querySelector('#pubDate'),
+      category: document.querySelector('#category'),
+      tags: document.querySelector('#tags'),
+      draft: document.querySelector('#draft'),
+      body: document.querySelector('#body'),
+    };
+
+    const today = new Date().toISOString().slice(0, 10);
+    passwordInput.value = state.password;
+
+    const headers = () => ({
+      'content-type': 'application/json',
+      'x-admin-password': state.password,
+    });
+
+    const setStatus = (message, tone = '') => {
+      status.textContent = message;
+      status.dataset.tone = tone;
+    };
+
+    const request = async (url, options = {}) => {
+      const response = await fetch(url, {
+        ...options,
+        headers: {
+          ...headers(),
+          ...(options.headers || {}),
+        },
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || `请求失败：${response.status}`);
+      return data;
+    };
+
+    const slugify = (value) => value
+      .trim()
+      .replace(/[\\/:*?"<>|]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/\.mdx?$/i, '')
+      .slice(0, 80);
+
+    const yamlEscape = (value) => String(value || '').replaceAll('"', '\\"');
+    const escapeHtml = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    }[char]));
+
+    const splitMarkdown = (markdown) => {
+      const match = markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
+      if (!match) return { body: markdown, data: {} };
+      const frontmatter = match[1];
+      const read = (name) => {
+        const found = frontmatter.match(new RegExp(`^${name}:\\s*(.*)$`, 'm'));
+        return found ? found[1].trim().replace(/^["']|["']$/g, '') : '';
+      };
+      const tagsBlock = frontmatter.match(/^tags:\s*\n((?:\s+- .*\n?)*)/m);
+      const tags = tagsBlock
+        ? tagsBlock[1].split('\n').map((line) => line.replace(/^\s*-\s*/, '').trim()).filter(Boolean)
+        : [];
+
+      return {
+        body: markdown.slice(match[0].length),
+        data: {
+          title: read('title'),
+          description: read('description'),
+          pubDate: read('pubDate'),
+          category: read('category'),
+          tags,
+          draft: read('draft') === 'true',
+        },
+      };
+    };
+
+    const buildMarkdown = () => {
+      const tags = fields.tags.value
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+        .map((tag) => `  - ${tag}`)
+        .join('\n') || '  - 未分类';
+      const draft = fields.draft.checked ? '\ndraft: true' : '';
+
+      return `---\ntitle: "${yamlEscape(fields.title.value)}"\ndescription: "${yamlEscape(fields.description.value)}"\npubDate: ${fields.pubDate.value || today}\ncategory: "${yamlEscape(fields.category.value || '未分类')}"\ntags:\n${tags}${draft}\n---\n\n${fields.body.value.trim()}\n`;
+    };
+
+    const renderList = () => {
+      const keyword = search.value.trim().toLowerCase();
+      const filtered = state.posts.filter((post) => {
+        const haystack = [post.title, post.category, post.filename, ...(post.tags || [])].join(' ').toLowerCase();
+        return haystack.includes(keyword);
+      });
+
+      list.innerHTML = filtered.map((post) => `
+        <button class="admin-post-item" type="button" data-path="${escapeHtml(post.path)}">
+          <strong>${escapeHtml(post.title || post.filename)}</strong>
+          <span>${escapeHtml(post.pubDate || '无日期')} · ${escapeHtml(post.category || '未分类')}</span>
+        </button>
+      `).join('') || '<p class="empty-list">没有找到文章。</p>';
+    };
+
+    const loadList = async () => {
+      setStatus('正在读取文章列表...');
+      const data = await request(apiUrl);
+      state.posts = data.posts || [];
+      renderList();
+      setStatus('文章列表已更新。', 'success');
+    };
+
+    const loadPost = async (path) => {
+      setStatus('正在读取文章...');
+      const data = await request(`${apiUrl}?path=${encodeURIComponent(path)}`);
+      state.currentPath = data.path;
+      const parsed = splitMarkdown(data.markdown || '');
+
+      fields.title.value = parsed.data.title || '';
+      fields.filename.value = data.path.split('/').pop() || '';
+      fields.description.value = parsed.data.description || '';
+      fields.pubDate.value = parsed.data.pubDate || today;
+      fields.category.value = parsed.data.category || '';
+      fields.tags.value = (parsed.data.tags || []).join(', ');
+      fields.draft.checked = Boolean(parsed.data.draft);
+      fields.body.value = parsed.body.trim();
+      commitLink.hidden = true;
+      setStatus(`正在编辑：${fields.filename.value}`, 'success');
+    };
+
+    const newPost = () => {
+      state.currentPath = '';
+      fields.title.value = '新文章标题';
+      fields.filename.value = '新文章标题.md';
+      fields.description.value = '';
+      fields.pubDate.value = today;
+      fields.category.value = '工艺研发';
+      fields.tags.value = '';
+      fields.draft.checked = false;
+      fields.body.value = '';
+      commitLink.hidden = true;
+      setStatus('正在新建文章。');
+      fields.title.focus();
+    };
+
+    const savePost = async () => {
+      saveBtn.disabled = true;
+      setStatus('正在提交到 GitHub...');
+      const data = await request(apiUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          action: 'save',
+          path: state.currentPath,
+          filename: fields.filename.value,
+          markdown: buildMarkdown(),
+        }),
+      });
+
+      state.currentPath = data.path;
+      if (data.commit) {
+        commitLink.href = data.commit;
+        commitLink.hidden = false;
+      }
+      setStatus('已提交。Cloudflare Pages 会自动开始部署。', 'success');
+      await loadList();
+      saveBtn.disabled = false;
+    };
+
+    const deletePost = async () => {
+      if (!state.currentPath) {
+        setStatus('当前是新文章，还没有可删除的 GitHub 文件。', 'error');
+        return;
+      }
+      if (!confirm(`确定删除 ${state.currentPath}？`)) return;
+
+      deleteBtn.disabled = true;
+      setStatus('正在删除...');
+      const data = await request(apiUrl, {
+        method: 'POST',
+        body: JSON.stringify({ action: 'delete', path: state.currentPath }),
+      });
+      if (data.commit) {
+        commitLink.href = data.commit;
+        commitLink.hidden = false;
+      }
+      newPost();
+      await loadList();
+      setStatus('文章已删除。', 'success');
+      deleteBtn.disabled = false;
+    };
+
+    loginBtn.addEventListener('click', async () => {
+      state.password = passwordInput.value.trim();
+      localStorage.setItem('blogAdminPassword', state.password);
+      loginPanel.hidden = true;
+      workspace.hidden = false;
+      try {
+        await loadList();
+        newPost();
+      } catch (error) {
+        loginPanel.hidden = false;
+        workspace.hidden = true;
+        alert(error.message);
+      }
+    });
+
+    list.addEventListener('click', (event) => {
+      const item = event.target.closest('[data-path]');
+      if (item) loadPost(item.dataset.path);
+    });
+
+    search.addEventListener('input', renderList);
+    newPostBtn.addEventListener('click', newPost);
+    deleteBtn.addEventListener('click', deletePost);
+    copyBtn.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(buildMarkdown());
+      setStatus('Markdown 已复制。', 'success');
+    });
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      try {
+        await savePost();
+      } catch (error) {
+        saveBtn.disabled = false;
+        setStatus(error.message, 'error');
+      }
+    });
+
+    fields.title.addEventListener('input', () => {
+      if (!state.currentPath) fields.filename.value = `${slugify(fields.title.value) || 'new-post'}.md`;
+    });
+  </script>
+</BaseLayout>

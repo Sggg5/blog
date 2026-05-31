@@ -90,6 +90,21 @@ CLOUDFLARE_ACCOUNT_ID
 
 API Token 需要有 R2 对象写入权限。
 
+## 文章后台
+
+访问 `/admin/` 可以新建、编辑和删除 Markdown 文章。后台通过 Pages Function 调用 GitHub API，把文章提交到 `src/content/blog`，随后 Cloudflare Pages 会自动重新部署。
+
+需要在 Cloudflare Pages 环境变量中配置：
+
+```text
+ADMIN_PASSWORD=后台登录密码
+GITHUB_TOKEN=GitHub fine-grained token，需要 Contents: Read and write
+GITHUB_REPO=Sggg5/blog
+GITHUB_BRANCH=main
+```
+
+`GITHUB_REPO` 和 `GITHUB_BRANCH` 可省略，默认分别为 `Sggg5/blog` 和 `main`。
+
 ## Cloudflare Pages 部署
 
 在 Cloudflare Pages 中连接 GitHub 仓库后，使用以下配置：

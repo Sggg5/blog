@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   background: var(--bg);
 }
@@ -421,7 +425,8 @@ a {
 
 .article,
 .listing-page,
-.editor-page {
+.editor-page,
+.admin-page {
   padding: 54px 0 80px;
 }
 
@@ -592,6 +597,203 @@ a {
   white-space: pre-wrap;
 }
 
+.admin-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 24px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 28px;
+}
+
+.admin-header h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(2.1rem, 4vw, 3.7rem);
+  line-height: 1.08;
+}
+
+.admin-header p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.admin-login {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--surface);
+}
+
+.admin-login label,
+.admin-login label span,
+.admin-editor label,
+.admin-editor label span {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-login span,
+.admin-editor label span {
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.admin-login input,
+.admin-editor input,
+.admin-editor textarea,
+.post-search input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 13px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  font: inherit;
+}
+
+.admin-login button,
+.manager-toolbar button,
+.admin-actions button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-workspace {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 24px;
+  padding-top: 28px;
+  align-items: start;
+}
+
+.post-manager,
+.admin-editor {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 22px 48px rgba(17, 24, 32, 0.08);
+}
+
+.post-manager {
+  position: sticky;
+  top: 18px;
+  overflow: hidden;
+}
+
+.manager-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding: 16px;
+}
+
+.post-search {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 16px;
+}
+
+.admin-post-list {
+  display: grid;
+  max-height: 680px;
+  overflow: auto;
+}
+
+.admin-post-item {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 16px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.admin-post-item:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.admin-post-item strong {
+  line-height: 1.45;
+}
+
+.admin-post-item span,
+.empty-list {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.empty-list {
+  margin: 0;
+  padding: 18px;
+}
+
+.admin-editor {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+}
+
+.editor-status {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--muted);
+}
+
+.editor-status[data-tone="success"] {
+  color: var(--accent-strong);
+}
+
+.editor-status[data-tone="error"] {
+  color: #9b2c2c;
+}
+
+.admin-editor textarea {
+  resize: vertical;
+}
+
+.draft-toggle {
+  display: flex !important;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.draft-toggle input {
+  width: auto;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-actions button.danger {
+  background: #9b2c2c;
+}
+
+.admin-actions button:disabled {
+  cursor: wait;
+  opacity: 0.66;
+}
+
 @media (max-width: 760px) {
   .site-shell {
     width: min(100% - 22px, 1160px);
@@ -604,6 +806,8 @@ a {
   .home-intro,
   .hero,
   .editor-grid,
+  .admin-header,
+  .admin-workspace,
   .field-row {
     grid-template-columns: 1fr;
   }
@@ -638,5 +842,9 @@ a {
 
   .intro-stats {
     text-align: left;
+  }
+
+  .post-manager {
+    position: static;
   }
 }
