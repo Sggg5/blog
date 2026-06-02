@@ -1,3 +1,5 @@
+@import url("https://cn-font.claude-code-best.win/packages/hwmct/dist/%E6%B1%87%E6%96%87%E6%98%8E%E6%9C%9D%E4%BD%93/result.css");
+
 :root {
   color-scheme: light;
   --bg: #f5f7f8;
@@ -10,7 +12,7 @@
   --accent-strong: #145c66;
   --metal: #d8dde1;
   --warning: #c67a2c;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Noto Sans SC", sans-serif;
+  font-family: "汇文明朝体", "Noto Serif SC", "Songti SC", "SimSun", serif;
 }
 
 * {
