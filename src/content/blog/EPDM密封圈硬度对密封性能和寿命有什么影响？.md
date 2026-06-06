@@ -1,8 +1,8 @@
 ---
 title: "EPDM密封圈硬度对密封性能和寿命有什么影响？"
 description: "EPDM密封圈常见硬度为70 Shore A，但硬度并非越高越好或越低越好。本文从密封原理、压缩永久变形、安装性能和使用寿命等方面解析硬度对EPDM密封圈的影响。"
-pubDate: 2026-05-31
-category: 工艺研发
+pubDate: 2026-06-06
+category: "工艺研发"
 tags:
   - EPDM密封圈
   - 沟槽管件
