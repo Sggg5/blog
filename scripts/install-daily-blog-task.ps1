@@ -24,7 +24,10 @@ if (-not (Test-Path -LiteralPath $runScript -PathType Leaf)) {
     throw "Run script is missing: $runScript"
 }
 
-$powershell = Join-Path $PSHOME 'powershell.exe'
+$powershell = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
+if (-not (Test-Path -LiteralPath $powershell -PathType Leaf)) {
+    throw "Windows PowerShell executable is missing: $powershell"
+}
 $arguments = "-NoLogo -NoProfile -ExecutionPolicy Bypass -File `"$runScript`""
 $action = New-ScheduledTaskAction -Execute $powershell -Argument $arguments -WorkingDirectory (Split-Path -Parent $PSScriptRoot)
 $trigger = New-ScheduledTaskTrigger -Daily -At $time
