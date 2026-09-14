@@ -1,0 +1,47 @@
+name: Daily AI Blog
+
+on:
+  schedule:
+    # 08:10 in China/Singapore (UTC+8)
+    - cron: "10 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate daily post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Repository variables take precedence. OPENAI_MODEL is retained for local use.
+          BLOG_AI_MODEL: ${{ vars.BLOG_AI_MODEL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+        run: npm run blog:generate
+
+      - name: Commit generated post
+        run: |
+          if [ -z "$(git status --porcelain -- src/content/blog)" ]; then
+            echo "No new article generated"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog
+          git commit -m "blog: add daily post $(date -u +%F)"
+          git push origin HEAD:main
