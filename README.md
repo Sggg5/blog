@@ -137,22 +137,20 @@ npm run build
 迁移
 测试
 
-## 每日 AI 博客
+## 每日 Codex 博客（Windows 本机）
 
-仓库的 `.github/workflows/daily-blog.yml` 会在每天北京时间／新加坡时间 08:10（UTC `10 0 * * *`）运行，也可手动触发。它会扫描 `src/content/blog` 中既有文章的文件名、标题、分类和标签，避开近 30 天的高度相似主题，再调用 OpenAI Responses API（优先启用 Web Search）生成和校验一篇文章。通过校验后才会写入 Markdown、提交并推送 `main`；Cloudflare Pages 将重新部署，现有 R2 同步工作流随后上传文章。
+每日文章由本机已经登录的 ChatGPT/Codex CLI 生成，不使用 GitHub AI 工作流或 API Key。固定写作规则位于 `scripts/daily-blog-prompt.md`；运行脚本位于 `scripts/run-daily-blog.ps1`。脚本会在工作区干净时拉取 `main`、调用 `codex exec`、只接受一篇新增的博客 Markdown、运行 Astro 构建，然后才提交和推送。推送后 Cloudflare Pages 继续自动构建，现有 `sync-r2.yml` 继续负责 R2 同步。
 
-在 GitHub 中进入 `Sggg5/blog -> Settings -> Secrets and variables -> Actions`，添加：
+先在仓库根目录试运行（会生成一篇未跟踪文章供检查，但绝不会提交或推送）：
 
-- Secret：`OPENAI_API_KEY`
-- Variable：`BLOG_AI_MODEL`（填写你账户可用的 OpenAI 模型名称；脚本不会猜测默认模型。）
-
-已有的 R2 同步仍需要 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 和 `R2_BUCKET_NAME`。
-
-首次测试可进入 `Actions -> Daily AI Blog -> Run workflow`。本地也可运行：
-
-```bash
-npm run blog:generate
-npm run blog:generate -- --dry-run
+```powershell
+.\scripts\run-daily-blog.ps1 -DryRun
 ```
 
-`--dry-run` 会调用 AI 并输出预览，但不会写入 `src/content/blog`。
+确认文章后，删除该 DryRun 生成的文章或手动提交；保持工作区干净后，安装每天 08:10（Windows `Singapore Standard Time`）执行的任务：
+
+```powershell
+.\scripts\install-daily-blog-task.ps1
+```
+
+任务使用当前 Windows 用户的本地 Codex 登录状态，因此需要该用户保持已登录。日志保存在被 Git 忽略的 `logs/` 目录。已有的 R2 同步仍需要 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 和 `R2_BUCKET_NAME`。
