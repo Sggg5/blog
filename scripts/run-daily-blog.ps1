@@ -26,6 +26,20 @@ function Stop-Run {
     exit 1
 }
 
+function Resolve-CodexExecutable {
+    $fromPath = Get-Command codex -ErrorAction SilentlyContinue
+    if ($fromPath) {
+        return $fromPath.Source
+    }
+
+    $npmBin = Join-Path ([Environment]::GetFolderPath('ApplicationData')) 'npm\codex.cmd'
+    if (Test-Path -LiteralPath $npmBin -PathType Leaf) {
+        return $npmBin
+    }
+
+    throw 'Codex CLI was not found. Install it for the current Windows user or add its npm bin directory to PATH.'
+}
+
 try {
     Write-RunLog "Started. DryRun=$DryRun"
     Set-Location -LiteralPath $RepositoryRoot
@@ -33,6 +47,8 @@ try {
     if (-not (Test-Path -LiteralPath $PromptPath -PathType Leaf)) {
         Stop-Run "Prompt file is missing: $PromptPath"
     }
+    $CodexExecutable = Resolve-CodexExecutable
+    Write-RunLog "Using Codex CLI: $CodexExecutable"
 
     $initialStatus = @(git -c core.quotepath=false status --porcelain)
     if ($initialStatus.Count -ne 0) {
@@ -46,7 +62,7 @@ try {
 
     Write-RunLog 'Starting Codex CLI.'
     Get-Content -LiteralPath $PromptPath -Raw |
-        & codex exec --sandbox workspace-write -
+        & $CodexExecutable exec --sandbox workspace-write -
     if ($LASTEXITCODE -ne 0) {
         Stop-Run "Codex CLI failed with exit code $LASTEXITCODE."
     }
