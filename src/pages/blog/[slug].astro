@@ -29,6 +29,18 @@ const { Content } = await render(post);
         {post.data.tags.map((tag) => <a href={`/tags/${tag}/`}>{tag}</a>)}
       </div>
     </header>
+
+    {post.data.coverImage && (
+      <figure class="article-cover">
+        <img
+          src={post.data.coverImage}
+          alt={post.data.coverAlt ?? post.data.title}
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    )}
+
     <div class="prose">
       <Content />
     </div>
@@ -36,6 +48,20 @@ const { Content } = await render(post);
 </BaseLayout>
 
 <style is:global>
+  .article-cover {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 0 34px;
+  }
+
+  .article-cover img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
   .prose img {
     display: block;
     width: 100%;
@@ -50,6 +76,14 @@ const { Content } = await render(post);
   }
 
   @media (max-width: 760px) {
+    .article-cover {
+      margin-bottom: 24px;
+    }
+
+    .article-cover img {
+      border-radius: 8px;
+    }
+
     .prose img {
       margin: 20px auto;
       border-radius: 6px;
