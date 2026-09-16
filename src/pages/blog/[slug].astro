@@ -34,3 +34,29 @@ const { Content } = await render(post);
     </div>
   </article>
 </BaseLayout>
+
+<style is:global>
+  .prose img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 28px auto;
+    border-radius: 8px;
+  }
+
+  .prose p:has(> img:only-child) {
+    margin: 28px 0;
+  }
+
+  @media (max-width: 760px) {
+    .prose img {
+      margin: 20px auto;
+      border-radius: 6px;
+    }
+
+    .prose p:has(> img:only-child) {
+      margin: 20px 0;
+    }
+  }
+</style>
