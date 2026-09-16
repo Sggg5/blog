@@ -95,7 +95,9 @@ try {
         Stop-Run ('Unexpected changes detected. Untracked count={0}; new blog Markdown count={1}.' -f $untrackedFiles.Count, $newBlogPosts.Count)
     }
 
-    $ArticlePath = [IO.Path]::GetRelativePath($RepositoryRoot, $newBlogPosts[0])
+    # PowerShell 5.1 uses .NET Framework, which does not provide
+    # [IO.Path]::GetRelativePath. Derive a Git-friendly relative path directly.
+    $ArticlePath = $newBlogPosts[0].Substring($RepositoryRoot.Length).TrimStart('\', '/') -replace '\\', '/'
     if (-not (Test-Path -LiteralPath (Join-Path $RepositoryRoot $ArticlePath) -PathType Leaf)) {
         Stop-Run "Expected new article does not exist: $ArticlePath"
     }
