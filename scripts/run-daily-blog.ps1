@@ -55,6 +55,12 @@ try {
         Stop-Run 'The repository already has uncommitted changes; no files were touched.'
     }
 
+    $BlogDirectory = Join-Path $RepositoryRoot 'src\content\blog'
+    $BlogPostsBefore = @(
+        Get-ChildItem -LiteralPath $BlogDirectory -File -Filter '*.md' |
+            ForEach-Object { $_.FullName }
+    )
+
     git pull --ff-only
     if ($LASTEXITCODE -ne 0) {
         Stop-Run 'git pull --ff-only failed.'
@@ -69,19 +75,27 @@ try {
     Write-RunLog 'Codex CLI completed successfully.'
 
     $trackedChanges = @((@(git diff --name-only) + @(git diff --cached --name-only)) | Where-Object { $_ })
-    $status = @(git -c core.quotepath=false status --porcelain)
     if ($trackedChanges.Count -ne 0) {
         Stop-Run ('Codex changed tracked files: ' + ($trackedChanges -join ', '))
     }
-    if ($status.Count -eq 0) {
+    # Do not parse `git status --porcelain` paths here: legacy Windows console
+    # encoding can corrupt Chinese filenames. Count Git's untracked entries, then
+    # identify the new Markdown file from the filesystem's native paths.
+    $untrackedFiles = @(git ls-files --others --exclude-standard)
+    $BlogPostsAfter = @(
+        Get-ChildItem -LiteralPath $BlogDirectory -File -Filter '*.md' |
+            ForEach-Object { $_.FullName }
+    )
+    $newBlogPosts = @($BlogPostsAfter | Where-Object { $_ -notin $BlogPostsBefore })
+    if ($untrackedFiles.Count -eq 0 -and $newBlogPosts.Count -eq 0) {
         Write-RunLog 'No article was generated; exiting without commit.'
         exit 0
     }
-    if ($status.Count -ne 1 -or $status[0] -notmatch '^\?\? src/content/blog/[^/\\]+\.md$') {
-        Stop-Run ('Unexpected changes detected: ' + ($status -join ' | '))
+    if ($untrackedFiles.Count -ne 1 -or $newBlogPosts.Count -ne 1) {
+        Stop-Run ('Unexpected changes detected. Untracked count={0}; new blog Markdown count={1}.' -f $untrackedFiles.Count, $newBlogPosts.Count)
     }
 
-    $ArticlePath = $status[0].Substring(3)
+    $ArticlePath = [IO.Path]::GetRelativePath($RepositoryRoot, $newBlogPosts[0])
     if (-not (Test-Path -LiteralPath (Join-Path $RepositoryRoot $ArticlePath) -PathType Leaf)) {
         Stop-Run "Expected new article does not exist: $ArticlePath"
     }
