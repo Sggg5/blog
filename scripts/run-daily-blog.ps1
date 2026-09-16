@@ -112,9 +112,15 @@ try {
     $CommitSha = (git rev-parse HEAD).Trim()
     Write-RunLog "Committed: $CommitSha"
 
-    git push origin main
+    # The scheduler runs in its own worktree branch. Push that exact commit to
+    # remote main instead of the local `main` ref from another checkout.
+    git push origin HEAD:main
     if ($LASTEXITCODE -ne 0) {
-        Stop-Run 'git push origin main failed.'
+        Write-RunLog 'Standard push failed; retrying with HTTP/1.1.'
+        git -c http.version=HTTP/1.1 push origin HEAD:main
+        if ($LASTEXITCODE -ne 0) {
+            Stop-Run 'git push to origin/main failed.'
+        }
     }
     Write-RunLog 'Push succeeded.'
     Write-RunLog 'Finished successfully.'
