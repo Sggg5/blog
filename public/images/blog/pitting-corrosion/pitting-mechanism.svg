@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset="1" stop-color="#eef4f9"/></linearGradient>
+    <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#cfd7df"/><stop offset="0.5" stop-color="#f3f6f8"/><stop offset="1" stop-color="#c3ccd5"/></linearGradient>
+    <linearGradient id="pit" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#b75d35"/><stop offset="1" stop-color="#5a2c24"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#176fc4"/></marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#c84c3f"/></marker>
+    <style>
+      .title{font:700 34px Arial,'Microsoft YaHei',sans-serif;fill:#0f458f}.sub{font:400 17px Arial,'Microsoft YaHei',sans-serif;fill:#5e7083}.h{font:700 19px Arial,'Microsoft YaHei',sans-serif;fill:#0f458f}.b{font:400 16px Arial,'Microsoft YaHei',sans-serif;fill:#40566f}.white{font:700 16px Arial,'Microsoft YaHei',sans-serif;fill:white}.num{font:700 24px Arial,sans-serif;fill:white}.small{font:400 14px Arial,'Microsoft YaHei',sans-serif;fill:#40566f}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" class="title">不锈钢点蚀为什么会从一个小点越蚀越深？</text>
+  <text x="600" y="82" text-anchor="middle" class="sub">点蚀不是整片表面同时变薄，而是钝化膜在局部失稳后形成“小阳极—大阴极”的局部腐蚀电池。</text>
+
+  <g transform="translate(55,120)">
+    <rect width="330" height="150" rx="18" fill="#eef6fc" stroke="#c8dceb"/>
+    <circle cx="34" cy="34" r="23" fill="#176fc4"/><text x="34" y="42" text-anchor="middle" class="num">1</text>
+    <text x="72" y="40" class="h">局部钝化膜失稳</text>
+    <text x="24" y="82" class="b">氯离子、夹杂、污染、划伤或局部</text>
+    <text x="24" y="108" class="b">表面状态差，使某个微小区域无法</text>
+    <text x="24" y="134" class="b">像周围表面一样保持稳定钝化。</text>
+  </g>
+  <g transform="translate(435,120)">
+    <rect width="330" height="150" rx="18" fill="#eef6fc" stroke="#c8dceb"/>
+    <circle cx="34" cy="34" r="23" fill="#176fc4"/><text x="34" y="42" text-anchor="middle" class="num">2</text>
+    <text x="72" y="40" class="h">小阳极面对大阴极</text>
+    <text x="24" y="82" class="b">裸露小区域成为阳极并溶解，周围</text>
+    <text x="24" y="108" class="b">大面积仍处于钝化状态，形成强烈</text>
+    <text x="24" y="134" class="b">的面积效应，使局部腐蚀速度升高。</text>
+  </g>
+  <g transform="translate(815,120)">
+    <rect width="330" height="150" rx="18" fill="#fff0ee" stroke="#efc6bf"/>
+    <circle cx="34" cy="34" r="23" fill="#d94b3d"/><text x="34" y="42" text-anchor="middle" class="num">3</text>
+    <text x="72" y="40" class="h" fill="#b23c31">坑内环境越来越恶劣</text>
+    <text x="24" y="82" class="b">金属离子水解使坑内更偏酸性，</text>
+    <text x="24" y="108" class="b">氯离子向坑内迁移维持电中性，</text>
+    <text x="24" y="134" class="b">腐蚀由“启动”进入自加速扩展。</text>
+  </g>
+
+  <rect x="70" y="355" width="1060" height="205" rx="10" fill="url(#steel)" stroke="#93a3b3" stroke-width="2"/>
+  <rect x="70" y="338" width="1060" height="18" rx="9" fill="#55a4e8"/>
+  <text x="112" y="326" class="h">稳定钝化膜</text>
+  <line x1="202" y1="321" x2="202" y2="337" stroke="#176fc4" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <path d="M520 354 C545 365 550 385 558 418 C565 450 580 520 600 542 C620 520 635 450 642 418 C650 385 655 365 680 354 Z" fill="url(#pit)" stroke="#82432e" stroke-width="3"/>
+  <path d="M520 345 C558 340 642 340 680 345" fill="none" stroke="#f2d4c4" stroke-width="9" stroke-dasharray="18 10"/>
+  <text x="600" y="590" text-anchor="middle" class="h">点蚀坑：表面开口可能很小，内部却可继续向深处扩展</text>
+
+  <g>
+    <circle cx="530" cy="305" r="22" fill="#428bd4"/><text x="530" y="312" text-anchor="middle" class="white">Cl⁻</text>
+    <circle cx="575" cy="285" r="22" fill="#428bd4"/><text x="575" y="292" text-anchor="middle" class="white">Cl⁻</text>
+    <circle cx="625" cy="285" r="22" fill="#428bd4"/><text x="625" y="292" text-anchor="middle" class="white">Cl⁻</text>
+    <circle cx="670" cy="305" r="22" fill="#428bd4"/><text x="670" y="312" text-anchor="middle" class="white">Cl⁻</text>
+    <line x1="550" y1="320" x2="575" y2="402" stroke="#176fc4" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+    <line x1="650" y1="320" x2="625" y2="402" stroke="#176fc4" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+  </g>
+
+  <text x="250" y="430" class="h">大面积钝化表面</text>
+  <text x="250" y="456" class="b">主要承担阴极反应</text>
+  <line x1="390" y1="440" x2="515" y2="430" stroke="#176fc4" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="760" y="420" class="h" fill="#b23c31">坑内金属持续溶解</text>
+  <text x="760" y="446" class="b">局部酸化 + 氯离子富集</text>
+  <text x="760" y="472" class="b">使再钝化越来越困难</text>
+  <line x1="755" y1="455" x2="655" y2="470" stroke="#c84c3f" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="90" y="630" width="1020" height="55" rx="18" fill="#edf4fb" stroke="#d2dfec"/>
+  <text x="600" y="664" text-anchor="middle" class="h">关键判断：表面只有一个小锈点，不代表损伤只停留在表面。</text>
+</svg>
