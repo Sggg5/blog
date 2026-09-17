@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs><style>
+  .t{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#154b86}.h{font:700 22px 'Microsoft YaHei',Arial,sans-serif;fill:#154b86}.b{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#40576d}.tag{font:700 17px 'Microsoft YaHei',Arial,sans-serif;fill:#fff}
+  </style></defs>
+  <rect width="1200" height="760" rx="24" fill="#f7fbff"/>
+  <text x="600" y="60" text-anchor="middle" class="t">同一块不锈钢，可能用 6 种完全不同的方式失效</text>
+  <text x="600" y="94" text-anchor="middle" class="b">“强度够不够”只是其中一个问题。薄壁结构更要同时看刚度、稳定、疲劳与连接。</text>
+  <g transform="translate(90,145)"><rect width="310" height="145" rx="18" fill="#eaf3fb" stroke="#caddec"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#2477c5"/><text x="63" y="41" text-anchor="middle" class="tag">屈服</text><text x="24" y="82" class="h">材料被拉/压到塑性区</text><text x="24" y="112" class="b">典型：拉伸、局部成形过度、过载。</text></g>
+  <g transform="translate(445,145)"><rect width="310" height="145" rx="18" fill="#eef6f1" stroke="#cfe1d4"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#2f8b57"/><text x="63" y="41" text-anchor="middle" class="tag">变形</text><text x="24" y="82" class="h">没断，但刚度已经不够</text><text x="24" y="112" class="b">典型：薄壁管凹陷、接口偏转、支撑不足。</text></g>
+  <g transform="translate(800,145)"><rect width="310" height="145" rx="18" fill="#fff4e6" stroke="#efd9b5"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#d69124"/><text x="63" y="41" text-anchor="middle" class="tag">屈曲</text><text x="24" y="82" class="h">细长或薄壁结构突然失稳</text><text x="24" y="112" class="b">典型：薄壁压瘪、局部起皱、受压壳体失稳。</text></g>
+  <g transform="translate(90,335)"><rect width="310" height="145" rx="18" fill="#fff0ee" stroke="#efcbc5"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#d95445"/><text x="63" y="41" text-anchor="middle" class="tag">断裂</text><text x="24" y="82" class="h">裂纹从局部缺口向外扩展</text><text x="24" y="112" class="b">典型：焊趾、划伤、冲孔边缘、脆化区域。</text></g>
+  <g transform="translate(445,335)"><rect width="310" height="145" rx="18" fill="#f2eefb" stroke="#d9d0ed"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#755bb2"/><text x="63" y="41" text-anchor="middle" class="tag">疲劳</text><text x="24" y="82" class="h">反复载荷让小缺陷慢慢长大</text><text x="24" y="112" class="b">典型：泵振动、热循环、反复启停、脉动压力。</text></g>
+  <g transform="translate(800,335)"><rect width="310" height="145" rx="18" fill="#eef5f5" stroke="#cedfdf"/><rect x="20" y="20" width="86" height="30" rx="15" fill="#488b8d"/><text x="63" y="41" text-anchor="middle" class="tag">连接失效</text><text x="24" y="82" class="h">主体没坏，接口先泄漏或松脱</text><text x="24" y="112" class="b">典型：焊缝、卡压、沟槽、法兰和密封结构。</text></g>
+  <rect x="105" y="550" width="990" height="125" rx="20" fill="#fff" stroke="#d5e1eb"/>
+  <text x="600" y="595" text-anchor="middle" class="h">质量分析不要只问：“材料抗拉强度是多少？”</text>
+  <text x="600" y="635" text-anchor="middle" class="b">更应该问：在真实载荷、真实几何和真实连接条件下，最先失效的模式是什么？</text>
+</svg>
