@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <style>
+      .title{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#123f75}.sub{font:400 16px 'Microsoft YaHei',Arial,sans-serif;fill:#62758a}.h{font:700 20px 'Microsoft YaHei',Arial,sans-serif;fill:#123f75}.b{font:400 16px 'Microsoft YaHei',Arial,sans-serif;fill:#40566e}.small{font:400 14px 'Microsoft YaHei',Arial,sans-serif;fill:#6f7f90}.num{font:700 22px Arial,sans-serif;fill:#fff}
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#3b7fc4"/></marker>
+  </defs>
+  <rect width="1200" height="760" rx="24" fill="#f7fafc"/>
+  <text x="600" y="58" text-anchor="middle" class="title">三个“50”的分叉：尺寸背后是三条不同的工业路径</text>
+  <text x="600" y="88" text-anchor="middle" class="sub">下面是工程视角的标准脉络，用来解释路径依赖；并非标准文本对“为何选这个尺寸”的官方历史说明。</text>
+
+  <g transform="translate(60,135)">
+    <rect width="320" height="475" rx="20" fill="#fff" stroke="#ccd9e5" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#2d77bd"/><text x="42" y="50" text-anchor="middle" class="num">1</text>
+    <text x="82" y="48" class="h">日本：Su 独立系列</text>
+    <rect x="34" y="100" width="252" height="60" rx="14" fill="#edf5fc"/><text x="160" y="126" text-anchor="middle" class="b">一般配管用薄壁不锈钢</text><text x="160" y="148" text-anchor="middle" class="b">形成 Su 尺寸序列</text>
+    <line x1="160" y1="160" x2="160" y2="205" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="212" width="252" height="74" rx="14" fill="#f6f8fa"/><text x="160" y="242" text-anchor="middle" class="b">13Su、20Su、25Su…</text><text x="160" y="266" text-anchor="middle" class="b">50Su → OD 48.6</text>
+    <line x1="160" y1="286" x2="160" y2="330" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="338" width="252" height="92" rx="14" fill="#fff7e9" stroke="#ecd7ae"/><text x="160" y="370" text-anchor="middle" class="b">形成自己的管件、工具、</text><text x="160" y="394" text-anchor="middle" class="b">现场叫法与库存体系</text>
+    <text x="160" y="455" text-anchor="middle" class="small">重点：50Su 是“系列名”，</text><text x="160" y="477" text-anchor="middle" class="small">不能直接按 DN50 理解。</text>
+  </g>
+
+  <g transform="translate(440,135)">
+    <rect width="320" height="475" rx="20" fill="#fff" stroke="#ccd9e5" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#2d77bd"/><text x="42" y="50" text-anchor="middle" class="num">2</text>
+    <text x="82" y="48" class="h">欧洲：公制安装生态</text>
+    <rect x="34" y="100" width="252" height="76" rx="14" fill="#edf5fc"/><text x="160" y="130" text-anchor="middle" class="b">铜管和不锈钢压接系统</text><text x="160" y="154" text-anchor="middle" class="b">共享大量公制尺寸习惯</text>
+    <line x1="160" y1="176" x2="160" y2="220" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="228" width="252" height="74" rx="14" fill="#f6f8fa"/><text x="160" y="258" text-anchor="middle" class="b">15 / 18 / 22 / 28 / 35</text><text x="160" y="282" text-anchor="middle" class="b">42 / 54 …</text>
+    <line x1="160" y1="302" x2="160" y2="346" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="354" width="252" height="92" rx="14" fill="#fff7e9" stroke="#ecd7ae"/><text x="160" y="386" text-anchor="middle" class="b">54 mm 被大量压接管件、</text><text x="160" y="410" text-anchor="middle" class="b">钳口和安装体系固化</text>
+    <text x="160" y="470" text-anchor="middle" class="small">同一个尺寸一旦形成生态，</text><text x="160" y="492" text-anchor="middle" class="small">改动成本会迅速放大。</text>
+  </g>
+
+  <g transform="translate(820,135)">
+    <rect width="320" height="475" rx="20" fill="#fff" stroke="#ccd9e5" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#2d77bd"/><text x="42" y="50" text-anchor="middle" class="num">3</text>
+    <text x="82" y="48" class="h">中国：吸收后形成自己的系列</text>
+    <rect x="34" y="100" width="252" height="82" rx="14" fill="#edf5fc"/><text x="160" y="128" text-anchor="middle" class="b">早期 GB/T 19228.2-2003</text><text x="160" y="152" text-anchor="middle" class="b">引用 EN 10312 和 JIS G 3448</text><text x="160" y="174" text-anchor="middle" class="small">不是简单照抄单一体系</text>
+    <line x1="160" y1="182" x2="160" y2="226" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="234" width="252" height="92" rx="14" fill="#f6f8fa"/><text x="160" y="264" text-anchor="middle" class="b">16 / 20 / 25.4 / 32 / 40</text><text x="160" y="288" text-anchor="middle" class="b">50.8 / 63.5 / 76.1 …</text><text x="160" y="312" text-anchor="middle" class="small">公制与英制痕迹并存</text>
+    <line x1="160" y1="326" x2="160" y2="370" stroke="#3b7fc4" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="34" y="378" width="252" height="76" rx="14" fill="#fff7e9" stroke="#ecd7ae"/><text x="160" y="408" text-anchor="middle" class="b">50.8 mm 恰好等于 2 inch</text><text x="160" y="432" text-anchor="middle" class="b">最终被国内卡压生态固化</text>
+    <text x="160" y="486" text-anchor="middle" class="small">“为什么恰好选50.8”并无公开</text><text x="160" y="508" text-anchor="middle" class="small">官方说明，以上为尺寸谱系推断。</text>
+  </g>
+
+  <rect x="100" y="650" width="1000" height="72" rx="18" fill="#eaf2fa" stroke="#ccdbea"/>
+  <text x="600" y="681" text-anchor="middle" class="h">标准的核心不是“数字漂亮”，而是“接口能不能继续用”</text>
+  <text x="600" y="707" text-anchor="middle" class="b">管材、管件、密封圈、模具、压接钳口、库存和施工习惯共同把尺寸锁定下来。</text>
+</svg>
