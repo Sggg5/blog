@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset="1" stop-color="#eef4f9"/></linearGradient>
+    <radialGradient id="steel" cx="35%" cy="25%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#d9e0e6"/><stop offset="0.8" stop-color="#aeb9c4"/><stop offset="1" stop-color="#7c8996"/></radialGradient>
+    <style>
+      .title{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#123f75}.sub{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#5b6f84}.h{font:700 22px 'Microsoft YaHei',Arial,sans-serif;fill:#123f75}.big{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#0d5fab}.b{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#40566e}.note{font:400 15px 'Microsoft YaHei',Arial,sans-serif;fill:#6b7b8c}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg)"/>
+  <text x="600" y="58" text-anchor="middle" class="title">同样写着“50”，为什么外径完全不同？</text>
+  <text x="600" y="90" text-anchor="middle" class="sub">“50”首先是各自体系里的公称/系列标识，不是三套标准共同约定的实际外径。</text>
+
+  <g transform="translate(90,150)">
+    <rect width="300" height="430" rx="20" fill="#fff" stroke="#cedae6" stroke-width="2"/>
+    <text x="150" y="48" text-anchor="middle" class="h">日本 JIS G 3448</text>
+    <text x="150" y="78" text-anchor="middle" class="b">50Su</text>
+    <circle cx="150" cy="215" r="97" fill="url(#steel)" stroke="#788795" stroke-width="4"/>
+    <circle cx="150" cy="215" r="82" fill="#f6f9fb" stroke="#9faab4" stroke-width="2"/>
+    <text x="150" y="226" text-anchor="middle" class="big">48.6 mm</text>
+    <text x="150" y="340" text-anchor="middle" class="b">Su 是日本薄壁不锈钢普通配管</text>
+    <text x="150" y="366" text-anchor="middle" class="b">自己的尺寸标识体系</text>
+    <text x="150" y="405" text-anchor="middle" class="note">注意：50Su ≠ 国际通用“DN50”</text>
+  </g>
+
+  <g transform="translate(450,150)">
+    <rect width="300" height="430" rx="20" fill="#fff" stroke="#cedae6" stroke-width="2"/>
+    <text x="150" y="48" text-anchor="middle" class="h">欧洲 EN 10312 体系</text>
+    <text x="150" y="78" text-anchor="middle" class="b">工程上常见 DN50</text>
+    <circle cx="150" cy="215" r="108" fill="url(#steel)" stroke="#788795" stroke-width="4"/>
+    <circle cx="150" cy="215" r="92" fill="#f6f9fb" stroke="#9faab4" stroke-width="2"/>
+    <text x="150" y="226" text-anchor="middle" class="big">54 mm</text>
+    <text x="150" y="340" text-anchor="middle" class="b">15 / 18 / 22 / 28 / 35 / 42 / 54</text>
+    <text x="150" y="366" text-anchor="middle" class="b">是典型欧洲公制管径序列</text>
+    <text x="150" y="405" text-anchor="middle" class="note">同一 54 mm 也出现在 EN 1057 铜管体系</text>
+  </g>
+
+  <g transform="translate(810,150)">
+    <rect width="300" height="430" rx="20" fill="#fff" stroke="#cedae6" stroke-width="2"/>
+    <text x="150" y="48" text-anchor="middle" class="h">中国 GB/T 19228.2</text>
+    <text x="150" y="78" text-anchor="middle" class="b">卡压薄壁不锈钢管常用“50”</text>
+    <circle cx="150" cy="215" r="102" fill="url(#steel)" stroke="#788795" stroke-width="4"/>
+    <circle cx="150" cy="215" r="87" fill="#f6f9fb" stroke="#9faab4" stroke-width="2"/>
+    <text x="150" y="226" text-anchor="middle" class="big">50.8 mm</text>
+    <text x="150" y="340" text-anchor="middle" class="b">50.8 mm = 2 inch × 25.4</text>
+    <text x="150" y="366" text-anchor="middle" class="b">体现了英制管外径系列的历史痕迹</text>
+    <text x="150" y="405" text-anchor="middle" class="note">但这不是 NPS 2 的 60.3 mm</text>
+  </g>
+
+  <rect x="90" y="610" width="1020" height="70" rx="18" fill="#eaf2fa" stroke="#ccdbea"/>
+  <text x="600" y="642" text-anchor="middle" class="h">关键：不要拿“50”直接对“50”</text>
+  <text x="600" y="668" text-anchor="middle" class="b">先确认标准、尺寸系列和实际外径，再谈管件、模具、密封圈与压接工具兼容。</text>
+</svg>
