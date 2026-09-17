@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      .t{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#154b86}.s{font:400 18px 'Microsoft YaHei',Arial,sans-serif;fill:#5b7088}.h{font:700 22px 'Microsoft YaHei',Arial,sans-serif;fill:#154b86}.b{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#40576d}.n{font:700 24px Arial;fill:#fff}
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L10,4 z" fill="#2477c5"/></marker>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="#f7fbff"/>
+  <text x="600" y="62" text-anchor="middle" class="t">结构思维的第一步：先看载荷怎么走</text>
+  <text x="600" y="98" text-anchor="middle" class="s">材料强度只是底牌，结构是否可靠，取决于力如何进入、传递、转向并最终闭合。</text>
+  <g transform="translate(90,160)">
+    <rect x="0" y="0" width="230" height="150" rx="18" fill="#eaf3fb" stroke="#c8dcec"/>
+    <circle cx="38" cy="38" r="24" fill="#2477c5"/><text x="38" y="46" text-anchor="middle" class="n">1</text>
+    <text x="74" y="42" class="h">压力进入</text>
+    <text x="24" y="84" class="b">内压、外载、装配力</text>
+    <text x="24" y="112" class="b">或热胀冷缩先进入管体</text>
+    <text x="24" y="138" class="b">与连接位置。</text>
+  </g>
+  <line x1="320" y1="235" x2="430" y2="235" stroke="#2477c5" stroke-width="5" marker-end="url(#a)"/>
+  <g transform="translate(450,160)">
+    <rect x="0" y="0" width="300" height="150" rx="18" fill="#eef6f1" stroke="#cfe1d4"/>
+    <circle cx="38" cy="38" r="24" fill="#2f8b57"/><text x="38" y="46" text-anchor="middle" class="n">2</text>
+    <text x="74" y="42" class="h" fill="#2f7350">结构传递</text>
+    <text x="24" y="84" class="b">直管承受膜应力，弯头改变力方向，</text>
+    <text x="24" y="112" class="b">焊缝、卡压口、沟槽和法兰把载荷</text>
+    <text x="24" y="138" class="b">继续传给下一段结构。</text>
+  </g>
+  <line x1="750" y1="235" x2="860" y2="235" stroke="#2477c5" stroke-width="5" marker-end="url(#a)"/>
+  <g transform="translate(880,160)">
+    <rect x="0" y="0" width="230" height="150" rx="18" fill="#fff1ee" stroke="#efcac3"/>
+    <circle cx="38" cy="38" r="24" fill="#d95445"/><text x="38" y="46" text-anchor="middle" class="n">3</text>
+    <text x="74" y="42" class="h" fill="#b43f33">薄弱处集中</text>
+    <text x="24" y="84" class="b">几何突变、孔洞、焊趾、</text>
+    <text x="24" y="112" class="b">弯曲半径、密封槽等位置</text>
+    <text x="24" y="138" class="b">容易出现应力集中。</text>
+  </g>
+  <rect x="120" y="390" width="960" height="210" rx="22" fill="#fff" stroke="#d6e1ec"/>
+  <text x="600" y="438" text-anchor="middle" class="h">不锈钢管件工程师真正要问的 4 个问题</text>
+  <text x="170" y="495" class="b">① 力从哪里进入？</text>
+  <text x="170" y="535" class="b">② 中间经过哪些截面和连接？</text>
+  <text x="650" y="495" class="b">③ 哪里发生方向、刚度或截面突变？</text>
+  <text x="650" y="535" class="b">④ 最后会以屈服、开裂、屈曲还是泄漏结束？</text>
+  <text x="600" y="648" text-anchor="middle" class="t" style="font-size:26px">先画清载荷路径，再谈材料强度。</text>
+</svg>
