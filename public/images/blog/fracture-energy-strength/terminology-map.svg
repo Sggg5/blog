@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs><style>
+.t{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.s{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#5b6f84}
+.h{font:700 22px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.b{font:400 16px 'Microsoft YaHei',Arial,sans-serif;fill:#40566f}
+.u{font:700 18px 'Microsoft YaHei',Arial,sans-serif;fill:#b34e3b}
+</style></defs>
+<rect width="1200" height="760" rx="24" fill="#f8fbfe"/>
+<text x="600" y="58" text-anchor="middle" class="t">“断裂能”不是一个指标：先分清你测的到底是什么</text>
+<text x="600" y="92" text-anchor="middle" class="s">三个常被混用的概念，试验方式、单位和用途完全不同。</text>
+
+<g transform="translate(70,145)">
+<rect width="320" height="420" rx="20" fill="#eef6fb" stroke="#cfdeea" stroke-width="2"/>
+<text x="160" y="48" text-anchor="middle" class="h">拉伸断裂功 / 拉伸韧性</text>
+<text x="160" y="82" text-anchor="middle" class="u">来自拉伸曲线</text>
+<text x="26" y="130" class="b">试验：拉伸试验</text>
+<text x="26" y="166" class="b">仪器功：∫F·dL，单位 J</text>
+<text x="26" y="202" class="b">单位体积韧性：∫σ·dε</text>
+<text x="26" y="238" class="b">单位：J/m³ = Pa</text>
+<text x="26" y="286" class="b">它同时受“强度”和“塑性”控制。</text>
+<text x="26" y="326" class="b">适合回答：</text>
+<text x="26" y="354" class="b">材料拉到断裂前总共能吸收</text>
+<text x="26" y="382" class="b">多少变形能？</text>
+</g>
+
+<g transform="translate(440,145)">
+<rect width="320" height="420" rx="20" fill="#fff4e9" stroke="#ead7bb" stroke-width="2"/>
+<text x="160" y="48" text-anchor="middle" class="h">夏比冲击吸收能量</text>
+<text x="160" y="82" text-anchor="middle" class="u">缺口摆锤冲击</text>
+<text x="26" y="130" class="b">试验：GB/T 229 / ASTM E23</text>
+<text x="26" y="166" class="b">单位：J</text>
+<text x="26" y="202" class="b">受温度、缺口、试样尺寸影响很大</text>
+<text x="26" y="250" class="b">它更关注高速加载和缺口敏感性。</text>
+<text x="26" y="298" class="b">适合回答：</text>
+<text x="26" y="326" class="b">材料在冲击和缺口条件下</text>
+<text x="26" y="354" class="b">“扛突然一击”的能力如何？</text>
+</g>
+
+<g transform="translate(810,145)">
+<rect width="320" height="420" rx="20" fill="#f2eefb" stroke="#d9d0ec" stroke-width="2"/>
+<text x="160" y="48" text-anchor="middle" class="h">断裂韧性 KIC / JIC</text>
+<text x="160" y="82" text-anchor="middle" class="u">带裂纹试样的断裂力学</text>
+<text x="26" y="130" class="b">试验：如 ASTM E399（KIC）</text>
+<text x="26" y="166" class="b">KIC 单位：MPa·√m</text>
+<text x="26" y="202" class="b">不是“J”，也不是拉伸曲线面积</text>
+<text x="26" y="250" class="b">它关注已有裂纹何时失稳扩展。</text>
+<text x="26" y="298" class="b">适合回答：</text>
+<text x="26" y="326" class="b">模具、焊缝、厚板里已有裂纹时，</text>
+<text x="26" y="354" class="b">还允许承受多大载荷？</text>
+</g>
+
+<rect x="95" y="610" width="1010" height="92" rx="18" fill="#eaf2fa" stroke="#ccddea"/>
+<text x="600" y="643" text-anchor="middle" class="h">模具材料比较：优先看 KIC / 冲击韧性 / 弯曲强度，而不是只盯“断裂功”</text>
+<text x="600" y="675" text-anchor="middle" class="b">不锈钢成形和吸能问题：拉伸韧性更直观；缺口冲击问题：看夏比；裂纹扩展问题：看断裂韧性。</text>
+</svg>
