@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<defs>
+<style>
+.t{font:700 34px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.s{font:400 18px 'Microsoft YaHei',Arial,sans-serif;fill:#5b6f84}
+.h{font:700 20px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.b{font:400 16px 'Microsoft YaHei',Arial,sans-serif;fill:#40566f}
+.n{font:700 18px 'Microsoft YaHei',Arial,sans-serif;fill:#222}
+</style>
+</defs>
+<rect width="1200" height="720" rx="24" fill="#f8fbfe"/>
+<text x="600" y="58" text-anchor="middle" class="t">抗拉强度相同，断裂功为什么还能差很多？</text>
+<text x="600" y="92" text-anchor="middle" class="s">抗拉强度看“最高点”，拉伸断裂功看“整条曲线下面积”。</text>
+
+<!-- axes -->
+<line x1="120" y1="575" x2="1080" y2="575" stroke="#6d7f90" stroke-width="3"/>
+<line x1="120" y1="575" x2="120" y2="145" stroke="#6d7f90" stroke-width="3"/>
+<text x="1100" y="586" class="b">应变 ε</text>
+<text x="70" y="150" class="b">应力 σ</text>
+
+<!-- ductile curve -->
+<path d="M120 575 C170 515,220 430,300 350 C410 245,520 225,610 235 C700 250,770 290,820 345 C860 390,895 450,920 515"
+fill="none" stroke="#2477c5" stroke-width="7"/>
+<path d="M120 575 C170 515,220 430,300 350 C410 245,520 225,610 235 C700 250,770 290,820 345 C860 390,895 450,920 515 L920 575 Z"
+fill="#dcecf9" opacity="0.8"/>
+<circle cx="610" cy="235" r="8" fill="#2477c5"/>
+<line x1="610" y1="235" x2="610" y2="180" stroke="#2477c5" stroke-width="2"/>
+<text x="625" y="175" class="h">Rm：最高点</text>
+<text x="725" y="335" class="h">高塑性材料</text>
+<text x="725" y="362" class="b">曲线“宽”，面积大</text>
+
+<!-- brittle-ish curve -->
+<path d="M120 575 C175 500,230 410,300 345 C355 292,410 250,455 238 C500 230,530 245,555 285"
+fill="none" stroke="#d95a49" stroke-width="7"/>
+<path d="M120 575 C175 500,230 410,300 345 C355 292,410 250,455 238 C500 230,530 245,555 285 L555 575 Z"
+fill="#f6ddd8" opacity="0.78"/>
+<circle cx="455" cy="238" r="8" fill="#d95a49"/>
+<text x="315" y="315" class="h" fill="#bd493b">低塑性/高硬度材料</text>
+<text x="315" y="342" class="b">最高应力可很高，但断裂应变小</text>
+
+<rect x="135" y="600" width="930" height="78" rx="16" fill="#edf4fa" stroke="#d1dfeb"/>
+<text x="600" y="630" text-anchor="middle" class="h">单位体积拉伸韧性（tensile toughness）≈ ∫ σ dε</text>
+<text x="600" y="657" text-anchor="middle" class="b">试验机显示的“断裂功”若是 ∫F·dL，则还会受试样截面、标距和夹持系统影响；不同试样不能直接拿 J 值横比。</text>
+</svg>
