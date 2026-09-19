@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<defs><style>
+.t{font:700 36px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.s{font:400 17px 'Microsoft YaHei',Arial,sans-serif;fill:#5b6f84}
+.h{font:700 18px 'Microsoft YaHei',Arial,sans-serif;fill:#173f68}
+.b{font:400 16px 'Microsoft YaHei',Arial,sans-serif;fill:#40566f}
+.v{font:700 17px 'Microsoft YaHei',Arial,sans-serif;fill:#174f8a}
+.note{font:400 14px 'Microsoft YaHei',Arial,sans-serif;fill:#697b8c}
+</style></defs>
+<rect width="1400" height="920" rx="24" fill="#f8fbfe"/>
+<text x="700" y="58" text-anchor="middle" class="t">六种钢放在一起：强度高，不代表拉伸断裂能一定高</text>
+<text x="700" y="92" text-anchor="middle" class="s">以下是代表性状态下的公开数据与工程趋势；不同厚度、加工硬化和热处理会显著改变结果。</text>
+
+<!-- header -->
+<g transform="translate(55,130)">
+<rect width="1290" height="58" rx="12" fill="#174f8a"/>
+<text x="90" y="36" text-anchor="middle" fill="#fff" class="h">材料</text>
+<text x="330" y="36" text-anchor="middle" fill="#fff" class="h">代表性状态</text>
+<text x="570" y="36" text-anchor="middle" fill="#fff" class="h">抗拉强度 Rm</text>
+<text x="780" y="36" text-anchor="middle" fill="#fff" class="h">断后伸长率</text>
+<text x="1030" y="36" text-anchor="middle" fill="#fff" class="h">拉伸断裂功趋势</text>
+<text x="1210" y="36" text-anchor="middle" fill="#fff" class="h">关键原因</text>
+</g>
+
+<!-- rows -->
+<g transform="translate(55,198)">
+<rect width="1290" height="92" fill="#eef6fb" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">201</text><text x="90" y="64" text-anchor="middle" class="note">奥氏体不锈钢</text>
+<text x="330" y="50" text-anchor="middle" class="b">退火/固溶态板带</text>
+<text x="570" y="50" text-anchor="middle" class="v">680–880 MPa</text>
+<text x="780" y="50" text-anchor="middle" class="v">约 45%</text>
+<text x="1030" y="50" text-anchor="middle" class="v">很高</text>
+<text x="1210" y="38" text-anchor="middle" class="b">高加工硬化</text><text x="1210" y="64" text-anchor="middle" class="b">强度与塑性同时较高</text>
+</g>
+
+<g transform="translate(55,290)">
+<rect width="1290" height="92" fill="#fff" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">304</text><text x="90" y="64" text-anchor="middle" class="note">奥氏体不锈钢</text>
+<text x="330" y="50" text-anchor="middle" class="b">退火/固溶态板带</text>
+<text x="570" y="50" text-anchor="middle" class="v">约 520–750 MPa</text>
+<text x="780" y="50" text-anchor="middle" class="v">约 45%</text>
+<text x="1030" y="50" text-anchor="middle" class="v">很高</text>
+<text x="1210" y="38" text-anchor="middle" class="b">延性大</text><text x="1210" y="64" text-anchor="middle" class="b">颈缩前吸收能量多</text>
+</g>
+
+<g transform="translate(55,382)">
+<rect width="1290" height="92" fill="#eef6fb" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">316L</text><text x="90" y="64" text-anchor="middle" class="note">奥氏体不锈钢</text>
+<text x="330" y="50" text-anchor="middle" class="b">退火/固溶态板带/板</text>
+<text x="570" y="50" text-anchor="middle" class="v">约 520–680 MPa</text>
+<text x="780" y="50" text-anchor="middle" class="v">约 40–45%</text>
+<text x="1030" y="50" text-anchor="middle" class="v">高</text>
+<text x="1210" y="38" text-anchor="middle" class="b">塑性好</text><text x="1210" y="64" text-anchor="middle" class="b">与304接近</text>
+</g>
+
+<g transform="translate(55,474)">
+<rect width="1290" height="92" fill="#fff" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">45钢</text><text x="90" y="64" text-anchor="middle" class="note">中碳结构钢</text>
+<text x="330" y="38" text-anchor="middle" class="b">GB/T 699 规定试样</text><text x="330" y="64" text-anchor="middle" class="b">推荐热处理后</text>
+<text x="570" y="50" text-anchor="middle" class="v">≥ 600 MPa</text>
+<text x="780" y="50" text-anchor="middle" class="v">≥ 16%</text>
+<text x="1030" y="50" text-anchor="middle" class="v">中等</text>
+<text x="1210" y="38" text-anchor="middle" class="b">强度不低</text><text x="1210" y="64" text-anchor="middle" class="b">但塑性明显低于奥氏体不锈钢</text>
+</g>
+
+<g transform="translate(55,566)">
+<rect width="1290" height="92" fill="#eef6fb" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">H13</text><text x="90" y="64" text-anchor="middle" class="note">热作模具钢</text>
+<text x="330" y="38" text-anchor="middle" class="b">淬火+回火</text><text x="330" y="64" text-anchor="middle" class="b">45 / 52 HRC</text>
+<text x="570" y="38" text-anchor="middle" class="v">约 1420 MPa（45 HRC）</text><text x="570" y="64" text-anchor="middle" class="v">约 1820 MPa（52 HRC）</text>
+<text x="780" y="50" text-anchor="middle" class="b">随回火/硬度变化很大</text>
+<text x="1030" y="50" text-anchor="middle" class="v">中等～较高，取决于回火</text>
+<text x="1210" y="38" text-anchor="middle" class="b">高强度</text><text x="1210" y="64" text-anchor="middle" class="b">但不能只看Rm</text>
+</g>
+
+<g transform="translate(55,658)">
+<rect width="1290" height="92" fill="#fff" stroke="#d5e2ec"/>
+<text x="90" y="38" text-anchor="middle" class="h">Cr12MoV</text><text x="90" y="64" text-anchor="middle" class="note">冷作模具钢</text>
+<text x="330" y="38" text-anchor="middle" class="b">淬火+低温回火</text><text x="330" y="64" text-anchor="middle" class="b">常见 ≥58 HRC</text>
+<text x="570" y="50" text-anchor="middle" class="b">高硬度状态不宜用单一Rm横比</text>
+<text x="780" y="50" text-anchor="middle" class="b">低，且对缺口敏感</text>
+<text x="1030" y="50" text-anchor="middle" class="v">通常低于Rm给人的直觉</text>
+<text x="1210" y="38" text-anchor="middle" class="b">高碳化物+高硬度</text><text x="1210" y="64" text-anchor="middle" class="b">耐磨优先，延性受限</text>
+</g>
+
+<rect x="75" y="785" width="1250" height="88" rx="18" fill="#fff4e8" stroke="#ecd8ba"/>
+<text x="700" y="817" text-anchor="middle" class="h" fill="#9b6421">注意：这里的“拉伸断裂功趋势”不是标准规定值，也不是夏比冲击功或 KIC。</text>
+<text x="700" y="847" text-anchor="middle" class="b">它只表示在相近拉伸试样和加载条件下，应力—应变曲线面积的相对直觉；模具钢必须同时看硬度、回火状态、冲击韧性和断裂韧性。</text>
+</svg>
