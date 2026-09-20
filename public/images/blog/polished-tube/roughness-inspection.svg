@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#ffffff"/>
+  <style>
+    .t{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#16324f}
+    .h{font-size:34px;font-weight:700}.s{font-size:21px;font-weight:600}.b{font-size:17px}.n{font-size:15px}
+    .box{fill:#f7fafc;stroke:#6b879f;stroke-width:2;rx:16}.key{fill:#eef5fb;stroke:#2d6ea3;stroke-width:2;rx:16}
+    .p{stroke:#2d6ea3;stroke-width:4;fill:none}.g{stroke:#9aa9b5;stroke-width:2;fill:none}.arr{stroke:#6b879f;stroke-width:3;fill:none;marker-end:url(#a)}
+  </style>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#6b879f"/></marker></defs>
+  <text x="60" y="62" class="t h">抛光管粗糙度怎么检：Ra、纹路方向与取样位置</text>
+  <text x="60" y="98" class="t b">Ra 是轮廓参数；“看起来亮”和“砂号是多少”都不能替代粗糙度实测。</text>
+
+  <rect x="60" y="145" width="470" height="235" class="box"/>
+  <text x="85" y="182" class="t s">1. Ra 越小，微观起伏通常越小</text>
+  <line x1="100" y1="230" x2="490" y2="230" class="g"/>
+  <path d="M100 230 C125 185 150 275 175 230 S225 185 250 230 S300 275 325 230 S375 185 400 230 S450 275 490 230" class="p"/>
+  <text x="100" y="285" class="t b">较粗表面：峰谷幅度大</text>
+  <line x1="100" y1="325" x2="490" y2="325" class="g"/>
+  <path d="M100 325 C130 310 160 340 190 325 S250 310 280 325 S340 340 370 325 S430 310 490 325" class="p"/>
+  <text x="100" y="365" class="t b">较细表面：峰谷幅度小</text>
+
+  <rect x="570" y="145" width="570" height="235" class="key"/>
+  <text x="595" y="182" class="t s">2. 测量方向：尽量横跨主要加工纹路</text>
+  <line x1="630" y1="230" x2="1030" y2="230" stroke="#8fa1ae" stroke-width="10"/>
+  <line x1="630" y1="255" x2="1030" y2="255" stroke="#8fa1ae" stroke-width="10"/>
+  <line x1="630" y1="280" x2="1030" y2="280" stroke="#8fa1ae" stroke-width="10"/>
+  <line x1="630" y1="305" x2="1030" y2="305" stroke="#8fa1ae" stroke-width="10"/>
+  <text x="1038" y="273" class="t n">加工纹路</text>
+  <path d="M820 330 V205" class="arr"/>
+  <text x="835" y="215" class="t b">触针移动方向</text>
+  <text x="595" y="352" class="t n">若客户/标准规定最大 Ra，应按“最大值”判定，不能只看平均值。</text>
+
+  <rect x="60" y="430" width="1080" height="205" class="box"/>
+  <text x="85" y="468" class="t s">3. 长管取样：不要只在管口测一次</text>
+  <line x1="135" y1="535" x2="1060" y2="535" stroke="#6b879f" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="230" cy="535" r="15" fill="#2d6ea3"/><circle cx="600" cy="535" r="15" fill="#2d6ea3"/><circle cx="970" cy="535" r="15" fill="#2d6ea3"/>
+  <text x="230" y="585" text-anchor="middle" class="t b">头部</text>
+  <text x="600" y="585" text-anchor="middle" class="t b">中部</text>
+  <text x="970" y="585" text-anchor="middle" class="t b">尾部</text>
+  <text x="85" y="620" class="t n">新工艺、换磨料、设备调整时宜扩大验证；稳定量产后再依据过程能力制定抽检方案。</text>
+</svg>
