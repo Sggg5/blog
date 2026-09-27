@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#fff"/>
+<style>.t{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#17324d}.h{font-size:34px;font-weight:700}.s{font-size:20px;font-weight:700}.b{font-size:16px}.n{font-size:14px}.box{fill:#f7fafc;stroke:#7890a4;stroke-width:2}.key{fill:#edf5fb;stroke:#2d6ea3;stroke-width:2}.warn{fill:#fff7f2;stroke:#b77b55;stroke-width:2}.arr{stroke:#8da1b1;stroke-width:3;fill:none;marker-end:url(#a)}</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8da1b1"/></marker></defs>
+<text x="55" y="60" class="t h">激光焊管异常怎么查：先看缺陷，再倒推参数</text>
+<text x="55" y="94" class="t b">不要一看到缺陷就只加功率。缺陷形貌往往能帮助区分“能量不足”和“接头/保护/稳定性问题”。</text>
+
+<rect x="65" y="145" width="215" height="95" rx="14" class="warn"/><text x="172" y="183" text-anchor="middle" class="t s">未焊透 / 熔深不足</text><text x="172" y="212" text-anchor="middle" class="t n">截面根部未贯通</text>
+<rect x="360" y="145" width="215" height="95" rx="14" class="warn"/><text x="467" y="183" text-anchor="middle" class="t s">咬边 / 塌陷</text><text x="467" y="212" text-anchor="middle" class="t n">焊缝几何异常</text>
+<rect x="655" y="145" width="215" height="95" rx="14" class="warn"/><text x="762" y="183" text-anchor="middle" class="t s">气孔 / 飞溅</text><text x="762" y="212" text-anchor="middle" class="t n">焊池或匙孔不稳定</text>
+<rect x="950" y="145" width="185" height="95" rx="14" class="warn"/><text x="1042" y="183" text-anchor="middle" class="t s">氧化 / 发黑</text><text x="1042" y="212" text-anchor="middle" class="t n">保护状态异常</text>
+
+<path d="M172 240 V300" class="arr"/><path d="M467 240 V300" class="arr"/><path d="M762 240 V300" class="arr"/><path d="M1042 240 V300" class="arr"/>
+
+<rect x="45" y="310" width="255" height="185" rx="14" class="key"/>
+<text x="172" y="346" text-anchor="middle" class="t s">优先检查</text><text x="70" y="378" class="t b">1. 实际功率是否下降</text><text x="70" y="407" class="t b">2. 线速是否升高</text><text x="70" y="436" class="t b">3. 焦点是否漂移</text><text x="70" y="465" class="t b">4. 接缝是否偏离光束</text>
+<rect x="340" y="310" width="255" height="185" rx="14" class="key"/>
+<text x="467" y="346" text-anchor="middle" class="t s">优先检查</text><text x="365" y="378" class="t b">1. 能量是否过高</text><text x="365" y="407" class="t b">2. 速度是否过低</text><text x="365" y="436" class="t b">3. 间隙 / 错边是否过大</text><text x="365" y="465" class="t b">4. 成形辊是否稳定</text>
+<rect x="635" y="310" width="255" height="185" rx="14" class="key"/>
+<text x="762" y="346" text-anchor="middle" class="t s">优先检查</text><text x="660" y="378" class="t b">1. 边缘油污、水分、氧化</text><text x="660" y="407" class="t b">2. 匙孔是否稳定</text><text x="660" y="436" class="t b">3. 保护气流量与喷嘴位置</text><text x="660" y="465" class="t b">4. 功率 / 速度组合</text>
+<rect x="930" y="310" width="225" height="185" rx="14" class="key"/>
+<text x="1042" y="346" text-anchor="middle" class="t s">优先检查</text><text x="955" y="378" class="t b">1. 气体纯度</text><text x="955" y="407" class="t b">2. 流量和覆盖范围</text><text x="955" y="436" class="t b">3. 喷嘴角度 / 距离</text><text x="955" y="465" class="t b">4. 内壁背面保护</text>
+
+<rect x="160" y="565" width="880" height="120" rx="16" class="box"/>
+<text x="600" y="604" text-anchor="middle" class="t s">量产控制顺序：设备状态 → 管坯对中 → 参数窗口 → 在线监控 → 截面验证</text>
+<text x="600" y="638" text-anchor="middle" class="t b">将实际功率、速度、焦点位置、对中偏差、气体状态与焊缝截面/无损结果关联，才能建立可复现的工艺窗口。</text>
+<text x="600" y="666" text-anchor="middle" class="t n">若只保存“设定值”，不记录实际值和焊缝结果，后续很难追溯波动来源。</text>
+</svg>
