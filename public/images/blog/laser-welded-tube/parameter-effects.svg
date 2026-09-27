@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#fff"/>
+<style>.t{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;fill:#17324d}.h{font-size:34px;font-weight:700}.s{font-size:20px;font-weight:700}.b{font-size:16px}.n{font-size:14px}.box{fill:#f7fafc;stroke:#7890a4;stroke-width:2}.key{fill:#edf5fb;stroke:#2d6ea3;stroke-width:2}.bad{fill:#fff7f2;stroke:#b77b55;stroke-width:2}.line{stroke:#8da1b1;stroke-width:2;fill:none;marker-end:url(#a)}</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8da1b1"/></marker></defs>
+<text x="55" y="60" class="t h">激光焊管关键参数：它们分别在控制什么？</text>
+<text x="55" y="94" class="t b">参数彼此耦合，不能只改一个数值；以下用于建立调参逻辑，不是固定工艺窗口。</text>
+
+<rect x="55" y="135" width="215" height="115" rx="14" class="key"/>
+<text x="162" y="172" text-anchor="middle" class="t s">激光功率 P</text><text x="162" y="202" text-anchor="middle" class="t b">直接影响能量输入能力</text><text x="162" y="228" text-anchor="middle" class="t n">偏低：未焊透 / 熔合不足</text>
+<rect x="305" y="135" width="215" height="115" rx="14" class="key"/>
+<text x="412" y="172" text-anchor="middle" class="t s">焊接速度 v</text><text x="412" y="202" text-anchor="middle" class="t b">决定单位长度受热时间</text><text x="412" y="228" text-anchor="middle" class="t n">过快：穿透不足；过慢：热积累</text>
+<rect x="555" y="135" width="215" height="115" rx="14" class="key"/>
+<text x="662" y="172" text-anchor="middle" class="t s">焦点 / 光斑</text><text x="662" y="202" text-anchor="middle" class="t b">控制功率密度与焊缝形状</text><text x="662" y="228" text-anchor="middle" class="t n">漂移：熔深和宽度随之变化</text>
+<rect x="805" y="135" width="215" height="115" rx="14" class="key"/>
+<text x="912" y="172" text-anchor="middle" class="t s">接缝间隙 / 对中</text><text x="912" y="202" text-anchor="middle" class="t b">决定光束能否稳定命中接头</text><text x="912" y="228" text-anchor="middle" class="t n">过差：咬边、错边、未熔合</text>
+
+<path d="M162 250 V305" class="line"/><path d="M412 250 V305" class="line"/><path d="M662 250 V305" class="line"/><path d="M912 250 V305" class="line"/>
+<rect x="85" y="310" width="905" height="120" rx="16" class="box"/>
+<text x="537" y="350" text-anchor="middle" class="t s">共同决定：有效线能量、匙孔稳定性、熔深 / 熔宽与热影响区</text>
+<text x="537" y="382" text-anchor="middle" class="t b">同样的 P/v 比值，不代表一定得到相同焊缝；焦点、光束质量、接头状态和材料都会改变结果。</text>
+<text x="537" y="410" text-anchor="middle" class="t n">量产应把“功率—速度—焦点—对中”作为一个工艺窗口管理，而不是独立设定。</text>
+
+<rect x="55" y="490" width="330" height="150" rx="14" class="key"/>
+<text x="220" y="528" text-anchor="middle" class="t s">保护气体与送气方式</text>
+<text x="80" y="560" class="t b">• 抑制焊池氧化和热变色</text><text x="80" y="588" class="t b">• 流量过低：保护不足</text><text x="80" y="616" class="t b">• 流量/喷嘴不当也会扰动焊池</text>
+<rect x="435" y="490" width="330" height="150" rx="14" class="key"/>
+<text x="600" y="528" text-anchor="middle" class="t s">成形、挤压与边缘质量</text>
+<text x="460" y="560" class="t b">• 管坯边缘必须稳定对合</text><text x="460" y="588" class="t b">• 错边和间隙直接破坏熔合</text><text x="460" y="616" class="t b">• 辊系跳动会造成周期性波动</text>
+<rect x="815" y="490" width="330" height="150" rx="14" class="bad"/>
+<text x="980" y="528" text-anchor="middle" class="t s">常见结果异常</text>
+<text x="840" y="560" class="t b">未焊透 / 未熔合 · 气孔</text><text x="840" y="588" class="t b">咬边 / 塌陷 · 焊缝偏移</text><text x="840" y="616" class="t b">飞溅 / 氧化 · 焊缝几何波动</text>
+<text x="55" y="705" class="t n">工程原则：先稳定原料、成形和对中，再用激光参数微调；否则“调功率”只是在追着上游波动跑。</text>
+</svg>
