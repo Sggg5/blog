@@ -1,0 +1,40 @@
+name: Validate Blog Assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/blog/**"
+      - "public/images/blog/**"
+      - "scripts/validate_blog_assets.py"
+      - ".github/workflows/validate-blog-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate new or changed blog posts
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          files=()
+          if [[ "$EVENT" == "workflow_dispatch" || -z "$BEFORE" || "$BEFORE" =~ ^0+$ ]]; then
+            while IFS= read -r -d '' p; do files+=("$p"); done < <(git ls-files -z 'src/content/blog/*.md')
+          else
+            while IFS= read -r -d '' p; do files+=("$p"); done < <(git diff --diff-filter=AM --name-only -z "$BEFORE" "$AFTER" -- 'src/content/blog/')
+          fi
+          if (( ${#files[@]} == 0 )); then
+            echo "No changed Markdown posts to validate."
+            exit 0
+          fi
+          python3 scripts/validate_blog_assets.py "${files[@]}"
