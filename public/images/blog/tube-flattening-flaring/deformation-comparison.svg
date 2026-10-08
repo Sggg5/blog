@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 520" role="img" aria-label="不锈钢焊管压扁与扩口试验的变形区域对照">
+<rect width="1080" height="520" fill="#ffffff"/>
+<text x="54" y="58" font-size="30" font-family="Arial, sans-serif" font-weight="700" fill="#174b83">压扁与扩口：受力方式不同，暴露的问题也不同</text>
+<rect x="48" y="94" width="474" height="360" rx="18" fill="#f3f7fb" stroke="#cbd8e6"/>
+<rect x="558" y="94" width="474" height="360" rx="18" fill="#f3f7fb" stroke="#cbd8e6"/>
+<text x="75" y="137" font-size="25" font-weight="700" fill="#174b83">压扁试验 · Flattening</text>
+<text x="585" y="137" font-size="25" font-weight="700" fill="#174b83">扩口试验 · Drift-expanding</text>
+<rect x="128" y="173" width="306" height="26" rx="5" fill="#9aaec2"/>
+<rect x="128" y="348" width="306" height="26" rx="5" fill="#9aaec2"/>
+<path d="M165 273 C165 232 219 218 281 218 C349 218 399 234 399 273 C399 316 348 333 281 333 C218 333 165 316 165 273Z" fill="#dbe5ed" stroke="#476c90" stroke-width="12"/>
+<path d="M279 220 L279 232" stroke="#c77e46" stroke-width="8" stroke-linecap="round"/>
+<text x="75" y="415" font-size="20" fill="#324b63">观察：焊缝、折弯区、母材表面是否开裂</text>
+<path d="M636 302 L716 258 L716 223 L902 223 L902 338 L716 338 L716 304Z" fill="#dbe5ed" stroke="#476c90" stroke-width="10" stroke-linejoin="round"/>
+<path d="M632 301 L716 258 L716 304Z" fill="#b0c7d9" stroke="#476c90" stroke-width="7"/>
+<path d="M778 222 L778 338" stroke="#c77e46" stroke-width="7" stroke-dasharray="12 9"/>
+<text x="585" y="415" font-size="20" fill="#324b63">观察：扩口边缘、焊缝及周向拉伸区</text>
+<text x="55" y="488" font-size="18" fill="#6a7e90">工程示意，不代表标准试样尺寸、加载方向或合格判据；具体要求以适用产品标准为准。</text>
+</svg>
