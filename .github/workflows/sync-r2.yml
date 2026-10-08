@@ -9,12 +9,21 @@ on:
       - ".github/workflows/sync-r2.yml"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: blog-r2-sync-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   sync-r2:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -22,17 +31,35 @@ jobs:
           node-version: 22
 
       - name: Upload Markdown posts
+        shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$R2_BUCKET_NAME" ]; then
+          set -euo pipefail
+          if [[ -z "$CLOUDFLARE_API_TOKEN" || -z "$CLOUDFLARE_ACCOUNT_ID" || -z "$R2_BUCKET_NAME" ]]; then
             echo "Missing CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, or R2_BUCKET_NAME."
             exit 1
           fi
-          shopt -s globstar nullglob
-          for file in src/content/blog/**/*.md; do
+
+          files=()
+          if [[ "$EVENT_NAME" == "workflow_dispatch" || -z "$BEFORE" || "$BEFORE" =~ ^0+$ ]]; then
+            # Manual dispatch is the explicit full-resync mode.
+            while IFS= read -r -d '' p; do files+=("$p"); done < <(find src/content/blog -type f -name '*.md' -print0)
+          else
+            while IFS= read -r -d '' p; do files+=("$p"); done < <(git diff --diff-filter=AM --name-only -z "$BEFORE" "$AFTER" -- 'src/content/blog/')
+          fi
+          if (( ${#files[@]} == 0 )); then
+            echo "No Markdown changes. Skipping R2 upload."
+            exit 0
+          fi
+          echo "Syncing ${#files[@]} Markdown file(s) to R2."
+          for file in "${files[@]}"; do
+            [[ -f "$file" ]] || continue
             name="$(basename "$file")"
-            npx wrangler@latest r2 object put "$R2_BUCKET_NAME/posts/$name" --file "$file" --remote
+            npx --yes wrangler@latest r2 object put "$R2_BUCKET_NAME/posts/$name" --file "$file" --remote
           done
