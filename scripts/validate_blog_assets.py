@@ -19,8 +19,13 @@ IMG_HTML = re.compile(r"<img\b[^>]*\bsrc\s*=\s*['\"]([^'\"]+)['\"]", re.I)
 
 def field(frontmatter: str, key: str) -> str | None:
     m = re.search(r"(?m)^" + re.escape(key) + r":\s*(.*)$", frontmatter)
-    return m.group(1).strip().strip('"\'') if m else None
-
+    if not m:
+        return None
+    value = m.group(1).strip().strip(chr(34) + chr(39))
+    if key == "tags" and not value:
+        if re.search(r"(?ms)^tags:\s*\n(?:[ \t]+-.*\n?)+", frontmatter):
+            return "__block_tags__"
+    return value
 
 def validate(path: Path) -> list[str]:
     issues: list[str] = []
