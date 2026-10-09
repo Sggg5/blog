@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 450" role="img" aria-label="不锈钢管端处理四步质量控制：切断、去毛刺、清洁、复检">
+<rect width="1080" height="450" fill="#ffffff"/>
+<g font-family="Noto Sans CJK SC,Arial,sans-serif">
+<text x="42" y="52" font-size="30" font-weight="700" fill="#174677">管端处理：四个工序控制点</text>
+<text x="42" y="83" font-size="17" fill="#64748b">每一站都有可检查的输出，不能仅用最终水压合格替代过程检验</text>
+<path d="M85 165 H994" stroke="#aec6da" stroke-width="7" stroke-linecap="round"/>
+<g>
+<rect x="34" y="117" width="237" height="272" rx="16" fill="#f3f7fb" stroke="#c7d8e6"/>
+<circle cx="153" cy="165" r="29" fill="#1f568b"/><text x="153" y="174" font-size="23" fill="white" text-anchor="middle" font-weight="700">1</text>
+<text x="153" y="227" font-size="24" text-anchor="middle" fill="#1e4977" font-weight="700">切断</text>
+<text x="53" y="274" font-size="18" fill="#405b70">检查：端面垂直度</text><text x="53" y="305" font-size="18" fill="#405b70">检查：椭圆与压扁</text><text x="53" y="336" font-size="18" fill="#405b70">关注：刀具磨损</text>
+</g>
+<g>
+<rect x="290" y="117" width="237" height="272" rx="16" fill="#f3f7fb" stroke="#c7d8e6"/>
+<circle cx="409" cy="165" r="29" fill="#1f568b"/><text x="409" y="174" font-size="23" fill="white" text-anchor="middle" font-weight="700">2</text>
+<text x="409" y="227" font-size="24" text-anchor="middle" fill="#1e4977" font-weight="700">去毛刺</text>
+<text x="309" y="274" font-size="18" fill="#405b70">检查：内外锐边</text><text x="309" y="305" font-size="18" fill="#405b70">检查：导入边连续</text><text x="309" y="336" font-size="18" fill="#405b70">关注：过度倒角</text>
+</g>
+<g>
+<rect x="546" y="117" width="237" height="272" rx="16" fill="#f3f7fb" stroke="#c7d8e6"/>
+<circle cx="665" cy="165" r="29" fill="#1f568b"/><text x="665" y="174" font-size="23" fill="white" text-anchor="middle" font-weight="700">3</text>
+<text x="665" y="227" font-size="24" text-anchor="middle" fill="#1e4977" font-weight="700">清洁</text>
+<text x="565" y="274" font-size="18" fill="#405b70">检查：金属屑残留</text><text x="565" y="305" font-size="18" fill="#405b70">检查：油污和颗粒</text><text x="565" y="336" font-size="18" fill="#405b70">关注：二次污染</text>
+</g>
+<g>
+<rect x="802" y="117" width="244" height="272" rx="16" fill="#f0f8f3" stroke="#afd5bb"/>
+<circle cx="924" cy="165" r="29" fill="#26724c"/><text x="924" y="174" font-size="23" fill="white" text-anchor="middle" font-weight="700">4</text>
+<text x="924" y="227" font-size="24" text-anchor="middle" fill="#226746" font-weight="700">复检</text>
+<text x="821" y="274" font-size="18" fill="#405b70">检查：插入深度</text><text x="821" y="305" font-size="18" fill="#405b70">检查：密封面划痕</text><text x="821" y="336" font-size="18" fill="#405b70">关注：批次追溯</text>
+</g>
+<text x="42" y="423" font-size="15" fill="#64748b">验收限值须由产品标准、客户图纸及工艺验证确定；本图只给出检查项目。</text>
+</g></svg>
