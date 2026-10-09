@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 440" role="img" aria-label="三种不锈钢管端口状态：滚切内翻边、锯切毛刺和去毛刺倒角后">
+<rect width="1080" height="440" fill="#ffffff"/><text x="40" y="50" font-size="29" font-weight="700" fill="#173f70" font-family="Noto Sans CJK SC,Arial,sans-serif">管端缺陷与合格端口对比</text><text x="40" y="81" font-size="16" fill="#64748b" font-family="Noto Sans CJK SC,Arial,sans-serif">示意图，不代表统一的倒角角度或尺寸公差；实际以连接系统的技术文件为准</text>
+<g font-family="Noto Sans CJK SC,Arial,sans-serif">
+<rect x="35" y="108" width="322" height="287" rx="13" fill="#f7fafc" stroke="#d9e3ec"/>
+<text x="57" y="142" font-size="22" font-weight="700" fill="#234c7d">① 滚切后内翻边</text>
+<path d="M76 215 H278 V235 H76 Z M76 310 H278 V330 H76 Z" fill="#9eb5ca" stroke="#466781" stroke-width="2"/>
+<path d="M277 215 L292 224 L290 252 L278 235 Z" fill="#e7a65a" stroke="#c4772a" stroke-width="2"/>
+<text x="57" y="365" font-size="18" fill="#3b536b">内径缩口、流道异物风险</text>
+<rect x="379" y="108" width="322" height="287" rx="13" fill="#f7fafc" stroke="#d9e3ec"/>
+<text x="400" y="142" font-size="22" font-weight="700" fill="#234c7d">② 锯切后边缘毛刺</text>
+<path d="M420 215 H622 V235 H420 Z M420 310 H622 V330 H420 Z" fill="#9eb5ca" stroke="#466781" stroke-width="2"/>
+<path d="M622 215 L641 202 L633 225 L622 235 Z M622 310 L641 301 L636 325 L622 330 Z" fill="#e7a65a" stroke="#c4772a" stroke-width="2"/>
+<text x="400" y="365" font-size="18" fill="#3b536b">内外锐边，可能划伤密封件</text>
+<rect x="723" y="108" width="322" height="287" rx="13" fill="#f3f9f6" stroke="#b9d9c9"/>
+<text x="744" y="142" font-size="22" font-weight="700" fill="#23654a">③ 去毛刺、导入边</text>
+<path d="M764 215 H953 L970 231 V235 H764 Z M764 310 H970 V314 L953 330 H764 Z" fill="#9eb5ca" stroke="#466781" stroke-width="2"/>
+<path d="M953 215 L970 231 M953 330 L970 314" stroke="#23654a" stroke-width="4"/>
+<text x="744" y="365" font-size="18" fill="#3b536b">无游离毛刺，便于顺畅插入</text>
+</g><path d="M55 413 H1020" stroke="#e1e7ef" stroke-width="2"/><text x="55" y="430" font-size="14" fill="#7b8b9a" font-family="Noto Sans CJK SC,Arial,sans-serif">工程提示：去毛刺不等于无限扩大倒角；过度加工也会改变有效壁厚和配合尺寸。</text></svg>
