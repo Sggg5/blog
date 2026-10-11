@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="410" viewBox="0 0 1080 410" role="img" aria-labelledby="title desc">
+<title id="title">换规格后首件确认的五道控制关口</title>
+<desc id="desc">材料与工单、成型尺寸、焊接状态、热处理与无损检测、质量放行形成闭环；异常应隔离并重新验证。</desc>
+<rect width="1080" height="410" fill="#ffffff"/>
+<text x="40" y="57" font-family="sans-serif" font-size="30" font-weight="700" fill="#183d60">换规格后的首件确认：不是量一次外径</text>
+<text x="40" y="91" font-family="sans-serif" font-size="17" fill="#526f85">推荐的工厂放行逻辑 · 具体检验项目及判定值以适用产品标准、工艺文件和订单为准</text>
+<g font-family="sans-serif" font-size="20" text-anchor="middle" fill="#183d60">
+<rect x="32" y="143" width="180" height="104" rx="13" fill="#eaf2f9" stroke="#8aaac4" stroke-width="2"/>
+<rect x="240" y="143" width="180" height="104" rx="13" fill="#eaf2f9" stroke="#8aaac4" stroke-width="2"/>
+<rect x="448" y="143" width="180" height="104" rx="13" fill="#eaf2f9" stroke="#8aaac4" stroke-width="2"/>
+<rect x="656" y="143" width="180" height="104" rx="13" fill="#eaf2f9" stroke="#8aaac4" stroke-width="2"/>
+<rect x="864" y="143" width="180" height="104" rx="13" fill="#dcebf4" stroke="#4b87b3" stroke-width="2"/>
+<text x="122" y="184">① 材料与工单</text><text x="122" y="217" font-size="16" fill="#56758b">卷号 · 规格 · 状态</text>
+<text x="330" y="184">② 成型尺寸</text><text x="330" y="217" font-size="16" fill="#56758b">外径 · 壁厚 · 椭圆</text>
+<text x="538" y="184">③ 焊接确认</text><text x="538" y="217" font-size="16" fill="#56758b">焊缝 · 保护 · 成形</text>
+<text x="746" y="184">④ 过程验证</text><text x="746" y="217" font-size="16" fill="#56758b">热处理 · 探伤</text>
+<text x="954" y="184">⑤ 质量放行</text><text x="954" y="217" font-size="16" fill="#56758b">记录完整再转序</text>
+</g>
+<g stroke="#4b87b3" stroke-width="3" fill="none"><path d="M213 195h23m-7 -7l7 7-7 7"/><path d="M421 195h23m-7 -7l7 7-7 7"/><path d="M629 195h23m-7 -7l7 7-7 7"/><path d="M837 195h23m-7 -7l7 7-7 7"/></g>
+<rect x="40" y="286" width="1000" height="79" rx="11" fill="#f3f7fa" stroke="#c5d6e2"/>
+<circle cx="77" cy="325" r="18" fill="#c07c41"/><text x="77" y="332" font-family="sans-serif" text-anchor="middle" font-size="19" fill="white">!</text>
+<text x="110" y="319" font-family="sans-serif" font-size="20" font-weight="700" fill="#39586d">任一关口异常：标识并隔离受影响管段</text>
+<text x="110" y="348" font-family="sans-serif" font-size="17" fill="#60788a">查清换料 / 调机 / 停机时间边界 → 纠正原因 → 重新取样验证 → 授权放行</text>
+</svg>
