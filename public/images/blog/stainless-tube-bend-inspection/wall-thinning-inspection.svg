@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="弯管壁厚减薄与外弧内弧检测位置">
+<rect width="960" height="440" fill="#fff"/>
+<text x="40" y="55" fill="#1b4770" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="28" font-weight="bold">弯管壁厚测点：外弧、内弧与侧壁分开记录</text>
+<text x="40" y="87" fill="#5c7083" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="18">示意为弯曲平面投影，实际测厚按工装、仪器与曲率条件布点</text>
+<path d="M 180 355 L 180 255 A 150 150 0 0 1 330 105 L 475 105" fill="none" stroke="#d8e4ec" stroke-width="92" stroke-linecap="butt"/>
+<path d="M 180 355 L 180 255 A 150 150 0 0 1 330 105 L 475 105" fill="none" stroke="#477394" stroke-width="4" stroke-linecap="butt"/>
+<path d="M 180 355 L 180 255 A 150 150 0 0 1 330 105 L 475 105" fill="none" stroke="#ffffff" stroke-width="76" stroke-linecap="butt"/>
+<path d="M 180 355 L 180 255 A 150 150 0 0 1 330 105 L 475 105" fill="none" stroke="#a9c0d2" stroke-width="2" stroke-dasharray="7 7"/>
+<circle cx="240" cy="148" r="10" fill="#b46b4f"/><circle cx="310" cy="195" r="10" fill="#2a8ba7"/>
+<path d="M 248 144 L 540 146" stroke="#b46b4f" stroke-width="3"/><path d="M 318 195 L 540 224" stroke="#2a8ba7" stroke-width="3"/>
+<text x="555" y="144" fill="#a65d43" font-size="22" font-family="Noto Sans CJK SC,Arial,sans-serif">外弧：重点检查最小壁厚 tmin</text>
+<text x="555" y="225" fill="#227d9b" font-size="22" font-family="Noto Sans CJK SC,Arial,sans-serif">内弧：重点检查褶皱与增厚</text>
+<rect x="530" y="275" width="370" height="80" rx="12" fill="#f0f5f9" stroke="#d9e3eb" stroke-width="2"/>
+<text x="715" y="306" text-anchor="middle" fill="#1b4770" font-size="20" font-family="Noto Sans CJK SC,Arial,sans-serif">减薄率 = (t₀ − tmin) / t₀</text>
+<text x="715" y="335" text-anchor="middle" fill="#1b4770" font-size="20" font-family="Noto Sans CJK SC,Arial,sans-serif">× 100%</text>
+<text x="42" y="415" fill="#5c7083" font-size="18" font-family="Noto Sans CJK SC,Arial,sans-serif">注意：超声测厚在小曲率表面应核对探头适配与耦合条件。</text>
+</svg>

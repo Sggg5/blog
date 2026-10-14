@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="激光打标热输入与标记外观及耐蚀风险的定性关系">
+<rect width="960" height="440" fill="#ffffff"/>
+<text x="40" y="52" fill="#17446e" font-family="Noto Sans CJK SC, sans-serif" font-size="28" font-weight="bold">同一种颜色，不代表同一种表面状态</text>
+<text x="40" y="83" fill="#63788a" font-family="Noto Sans CJK SC, sans-serif" font-size="18">热输入只是风险线索；真实结果还取决于脉宽、频率、速度、间距、材料和环境</text>
+<g font-family="Noto Sans CJK SC, sans-serif" font-size="21" fill="#17446e">
+<rect x="42" y="116" width="270" height="233" rx="15" fill="#f2f7fa" stroke="#ccdce8" stroke-width="2"/>
+<rect x="345" y="116" width="270" height="233" rx="15" fill="#f2f7fa" stroke="#ccdce8" stroke-width="2"/>
+<rect x="648" y="116" width="270" height="233" rx="15" fill="#f2f7fa" stroke="#ccdce8" stroke-width="2"/>
+<text x="177" y="151" text-anchor="middle">低对比标记</text><text x="480" y="151" text-anchor="middle">清晰、可读标记</text><text x="783" y="151" text-anchor="middle">明显热变色／粗糙</text>
+<rect x="81" y="181" width="193" height="95" rx="12" fill="#cad4da" stroke="#8da6b5" stroke-width="3"/>
+<rect x="384" y="181" width="193" height="95" rx="12" fill="#cad4da" stroke="#8da6b5" stroke-width="3"/>
+<rect x="687" y="181" width="193" height="95" rx="12" fill="#cad4da" stroke="#8da6b5" stroke-width="3"/>
+<g fill="#87949b"><circle cx="131" cy="209" r="3"/><circle cx="151" cy="209" r="3"/><circle cx="171" cy="209" r="3"/><circle cx="191" cy="209" r="3"/></g>
+<g fill="#3e5364"><circle cx="434" cy="209" r="5"/><circle cx="454" cy="209" r="5"/><circle cx="474" cy="209" r="5"/><circle cx="494" cy="209" r="5"/><circle cx="514" cy="209" r="5"/><circle cx="434" cy="229" r="5"/><circle cx="454" cy="229" r="5"/><circle cx="474" cy="229" r="5"/><circle cx="494" cy="229" r="5"/><circle cx="514" cy="229" r="5"/></g>
+<rect x="715" y="195" width="140" height="62" rx="10" fill="#9a8076" opacity=".58"/><g fill="#3f2d28"><circle cx="737" cy="210" r="6"/><circle cx="755" cy="211" r="7"/><circle cx="775" cy="212" r="5"/><circle cx="795" cy="213" r="7"/><circle cx="815" cy="214" r="6"/></g>
+<text x="177" y="318" text-anchor="middle" font-size="17" fill="#586c7c">识读与耐久性待验证</text><text x="480" y="318" text-anchor="middle" font-size="17" fill="#586c7c">仍需耐蚀性验证</text><text x="783" y="318" text-anchor="middle" font-size="17" fill="#9a503d">应重点检查氧化与微裂纹</text>
+</g>
+<rect x="42" y="371" width="876" height="48" rx="9" fill="#e9f1f7"/>
+<text x="480" y="401" text-anchor="middle" fill="#17446e" font-family="Noto Sans CJK SC, sans-serif" font-size="20">图示为风险分区，不是通用的激光功率、能量或合格阈值</text>
+</svg>

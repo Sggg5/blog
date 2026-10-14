@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="弯管截面椭圆度测量示意">
+<rect width="960" height="440" fill="#fff"/>
+<text x="40" y="55" fill="#1b4770" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="28" font-weight="bold">弯管截面椭圆度：在同一截面寻找极值</text>
+<text x="40" y="90" fill="#5c7083" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="18">测量平面垂直于局部管轴线 · 结构示意不按比例</text>
+<rect x="40" y="112" width="415" height="258" rx="14" fill="#f5f8fb" stroke="#d9e3eb" stroke-width="2"/>
+<rect x="485" y="112" width="435" height="258" rx="14" fill="#f5f8fb" stroke="#d9e3eb" stroke-width="2"/>
+<text x="65" y="148" fill="#274e72" font-size="21" font-family="Noto Sans CJK SC,Arial,sans-serif">弯前：近似圆形</text>
+<circle cx="250" cy="249" r="93" fill="#e5eef6" stroke="#477394" stroke-width="8"/><circle cx="250" cy="249" r="78" fill="#fff" stroke="#9eb9cc" stroke-width="2"/>
+<line x1="157" y1="249" x2="343" y2="249" stroke="#b46b4f" stroke-width="3"/><text x="250" y="357" text-anchor="middle" fill="#1b4770" font-size="18" font-family="Arial,sans-serif">D₀</text>
+<text x="510" y="148" fill="#274e72" font-size="21" font-family="Noto Sans CJK SC,Arial,sans-serif">弯后：截面变椭圆</text>
+<ellipse cx="710" cy="249" rx="137" ry="76" fill="#e5eef6" stroke="#477394" stroke-width="8"/><ellipse cx="710" cy="249" rx="121" ry="60" fill="#fff" stroke="#9eb9cc" stroke-width="2"/>
+<line x1="573" y1="249" x2="847" y2="249" stroke="#b46b4f" stroke-width="3"/><text x="710" y="238" text-anchor="middle" fill="#b46b4f" font-size="19" font-family="Arial,sans-serif">Dmax</text>
+<line x1="710" y1="173" x2="710" y2="325" stroke="#2a8ba7" stroke-width="3"/><text x="722" y="344" fill="#2a8ba7" font-size="19" font-family="Arial,sans-serif">Dmin</text>
+<rect x="40" y="386" width="880" height="39" rx="8" fill="#e8f0f7"/><text x="480" y="413" text-anchor="middle" fill="#1b4770" font-size="20" font-family="Noto Sans CJK SC,Arial,sans-serif">椭圆度 = (Dmax − Dmin) / D₀ × 100%</text>
+</svg>

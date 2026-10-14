@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-label="激光打标首件验证矩阵">
+<rect width="960" height="440" fill="#fff"/>
+<text x="42" y="51" fill="#17446e" font-family="Noto Sans CJK SC, sans-serif" font-size="29" font-weight="bold">首件验证：标记质量与表面风险必须分开判</text>
+<text x="42" y="82" fill="#63788a" font-family="Noto Sans CJK SC, sans-serif" font-size="18">同批同材同前处理设置未打标对照样，先固定工艺，再比较结果</text>
+<rect x="42" y="111" width="876" height="54" rx="9" fill="#17446e"/>
+<g font-family="Noto Sans CJK SC, sans-serif" font-size="20" fill="#fff"><text x="105" y="145">样品组</text><text x="346" y="145">标识性能</text><text x="634" y="145">表面与耐蚀表现</text></g>
+<g font-family="Noto Sans CJK SC, sans-serif" font-size="19" fill="#274f70">
+<rect x="42" y="172" width="876" height="70" rx="7" fill="#f1f6f9"/><text x="75" y="213">未打标对照</text><text x="298" y="213">—</text><text x="547" y="213">外观、表面污染、基线试验</text>
+<rect x="42" y="250" width="876" height="70" rx="7" fill="#e7f0f6"/><text x="75" y="292">工艺候选 A</text><text x="298" y="292">对比度、识读、擦拭</text><text x="547" y="292">氧化、粗糙度、选定耐蚀试验</text>
+<rect x="42" y="328" width="876" height="70" rx="7" fill="#f1f6f9"/><text x="75" y="370">工艺候选 B</text><text x="298" y="370">对比度、识读、擦拭</text><text x="547" y="370">氧化、粗糙度、选定耐蚀试验</text>
+</g>
+<path d="M270 117V393 M527 117V393" stroke="#b7ccd9" stroke-width="2"/>
+</svg>
