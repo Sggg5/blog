@@ -1,0 +1,50 @@
+name: Check Astro Site Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/**"
+      - "src/pages/**"
+      - "src/lib/**"
+      - "src/layouts/**"
+      - "src/styles/**"
+      - "public/images/blog/**"
+      - "astro.config.mjs"
+      - "src/content.config.ts"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/check-astro-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build static Astro pages
+        run: npm run build
+      - name: Verify latest published post appears in built output
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import html
+          index=Path("dist/index.html")
+          if not index.is_file():
+              raise SystemExit("Missing dist/index.html")
+          content=html.unescape(index.read_text(encoding="utf-8"))
+          title="从工资到资产：工程技术人员如何建立长期财富"
+          if title not in content:
+              raise SystemExit("Latest published title missing from generated index.html")
+          print("OK: Latest published title appears in static homepage.")
+          PY
