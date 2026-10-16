@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-label="职业资本积累到长期资产的五步示意图">
+<rect width="960" height="340" fill="#ffffff"/>
+<text x="38" y="51" fill="#184a78" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="bold">职业收入如何逐步形成可持续财富</text>
+<text x="38" y="83" fill="#637b90" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="17">示意路径，非收益承诺；每一步都应以实际记录和风险承受能力为依据</text>
+<g fill="#edf4fa" stroke="#8ba9c0" stroke-width="2">
+<rect x="30" y="126" width="156" height="94" rx="12"/><rect x="216" y="126" width="156" height="94" rx="12"/><rect x="402" y="126" width="156" height="94" rx="12"/><rect x="588" y="126" width="156" height="94" rx="12"/><rect x="774" y="126" width="156" height="94" rx="12"/>
+</g>
+<g fill="#1d4e7a" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" text-anchor="middle" font-size="19" font-weight="bold">
+<text x="108" y="165">稀缺技能</text><text x="294" y="165">可证明成果</text><text x="480" y="165">收入议价</text><text x="666" y="165">稳定结余</text><text x="852" y="165">长期资产</text>
+</g>
+<g fill="#61768a" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" text-anchor="middle" font-size="14">
+<text x="108" y="192">技术与判断</text><text x="294" y="192">质量／成本／效率</text><text x="480" y="192">薪资与机会</text><text x="666" y="192">预算与应急金</text><text x="852" y="192">分散和长期持有</text>
+</g>
+<g fill="none" stroke="#5988ae" stroke-width="3"><path d="M188 173h23m-7 -6l7 6 -7 6"/><path d="M374 173h23m-7 -6l7 6 -7 6"/><path d="M560 173h23m-7 -6l7 6 -7 6"/><path d="M746 173h23m-7 -6l7 6 -7 6"/></g>
+<rect x="30" y="250" width="900" height="61" rx="10" fill="#f5f8fb" stroke="#dbe6ee"/>
+<text x="480" y="279" fill="#3f617c" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="17" text-anchor="middle">风险底线：保留现金流与应急储备，不把职业成就等同于投资回报</text>
+<text x="480" y="300" fill="#667f94" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="14" text-anchor="middle">收入提升不必然变富；储蓄能力、资产配置与时间共同决定结果</text>
+</svg>
