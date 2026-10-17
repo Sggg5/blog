@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="510" viewBox="0 0 1100 510" role="img" aria-label="EPDM密封圈仿真验收闭环">
+<title>EPDM密封圈仿真验收闭环</title><desc>材料试验、混合单元、接触定义和结果验收的因果链</desc>
+<rect width="1100" height="510" fill="#ffffff"/>
+<style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#17375d}.h{font-size:25px;font-weight:bold}.t{font-size:20px}.s{font-size:17px;fill:#42566c}</style>
+
+<text class="h" x="48" y="54">从材料数据到可解释的接触压力</text>
+<g stroke="#366aa0" stroke-width="3" fill="#f0f5fb"><rect x="40" y="114" width="235" height="235" rx="16"/><rect x="303" y="114" width="235" height="235" rx="16"/><rect x="566" y="114" width="235" height="235" rx="16"/><rect x="829" y="114" width="235" height="235" rx="16"/></g>
+<g text-anchor="middle"><text class="h" x="158" y="166">材料标定</text><text class="h" x="421" y="166">网格检查</text><text class="h" x="684" y="166">接触与载荷</text><text class="h" x="947" y="166">结果判读</text>
+<text class="t" x="158" y="216">应力—应变曲线</text><text class="t" x="421" y="216">C3D8H / C3D8RH</text><text class="t" x="684" y="216">硬接触 / 滑移</text><text class="t" x="947" y="216">CPRESS + COPEN</text>
+<text class="s" x="158" y="260">拉伸 / 压缩数据</text><text class="s" x="421" y="260">厚度方向分层</text><text class="s" x="684" y="260">逐步收紧</text><text class="s" x="947" y="260">峰值应变位置</text>
+<text class="s" x="158" y="304">稳定性检查</text><text class="s" x="421" y="304">畸变与收敛</text><text class="s" x="684" y="304">避免初始穿透</text><text class="s" x="947" y="304">敏感性对比</text></g>
+<text class="s" x="46" y="409">注：硬度不能直接替代超弹性曲线；CPRESS 云图也不能单独证明密封寿命。</text>
+<text class="s" x="46" y="445">模型与试验应对照：实际螺栓间隙、装配反力、密封泄漏与压缩永久变形。</text>
+</svg>

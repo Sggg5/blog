@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="510" viewBox="0 0 1100 510" role="img" aria-label="沟槽卡箍密封圈仿真载荷路径">
+<title>沟槽卡箍密封圈仿真载荷路径</title><desc>从初始装配到螺栓收紧、保持、卸载后读取接触压力的四阶段流程</desc>
+<rect width="1100" height="510" fill="#ffffff"/>
+<style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#17375d}.h{font-size:25px;font-weight:bold}.t{font-size:20px}.s{font-size:17px;fill:#42566c}</style>
+
+<text class="h" x="55" y="54">螺栓收紧不能直接替换成最终压缩位移</text>
+<line x1="76" y1="252" x2="1024" y2="252" stroke="#a2b5cb" stroke-width="5"/>
+<g fill="#eaf2fa" stroke="#2d6198" stroke-width="3">
+<rect x="45" y="106" width="220" height="272" rx="20"/><rect x="309" y="106" width="220" height="272" rx="20"/>
+<rect x="573" y="106" width="220" height="272" rx="20"/><rect x="837" y="106" width="220" height="272" rx="20"/>
+</g>
+<g fill="#17375d" font-size="19" text-anchor="middle">
+<text class="h" x="155" y="148">Step 1</text><text class="h" x="419" y="148">Step 2</text><text class="h" x="683" y="148">Step 3</text><text class="h" x="947" y="148">Step 4</text>
+<text class="t" x="155" y="197">初始装配</text><text class="t" x="419" y="197">分段收紧</text><text class="t" x="683" y="197">保持载荷</text><text class="t" x="947" y="197">局部卸载</text>
+<text class="s" x="155" y="300">消除初始穿透</text><text class="s" x="419" y="300">交替拉近两耳</text><text class="s" x="683" y="300">记录反力与间隙</text><text class="s" x="947" y="300">读取剩余 CPRESS</text>
+<text class="s" x="155" y="335">确认初始间隙</text><text class="s" x="419" y="335">控制位移或预紧</text><text class="s" x="683" y="335">确认密封连续性</text><text class="s" x="947" y="335">勿当作永久变形</text>
+</g>
+<text class="s" x="58" y="453">提示：只卸载螺栓外力但保留装配约束，与完全拆除卡箍是两种不同工况。</text>
+</svg>
