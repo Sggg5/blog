@@ -57,8 +57,8 @@ def find_posts(before, after, supplied):
     if not before or set(before) == {"0"}:
         raise ValueError("no previous commit; workflow_dispatch requires --post")
     changed = subprocess.check_output(
-        ["git", "diff", "--diff-filter=AM", "--name-only", before, after, "--", "src/content/blog/"],
-        text=True).splitlines()
+        ["git", "diff", "--diff-filter=AM", "--name-only", "-z", before, after, "--", "src/content/blog/"],
+        text=True).split("\0")
     return [x for x in changed if x.endswith(".md")]
 
 def poll_site(base, posts, seconds=150):
