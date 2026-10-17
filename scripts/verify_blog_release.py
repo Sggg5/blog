@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from article_routes import article_links, article_title
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -65,21 +66,29 @@ def poll_site(base, posts, seconds=150):
     deadline = time.monotonic() + seconds
     results = {}
     while True:
-        for post in posts:
-            match = re.search(r"(?m)^title:\s*(.*)$", Path(post).read_text(encoding="utf-8"))
-            if not match:
-                raise ValueError(f"missing title: {post}")
-            expected = match.group(1).strip().strip('"\'')
-            url = base.rstrip("/") + "/blog/" + quote(Path(post).stem, safe="") + "/"
-            try:
-                page = html.unescape(fetch(url).decode("utf-8"))
-                results[post] = ("success: " if expected in page else "missing title: ") + url
-            except Exception as exc:
-                results[post] = f"{type(exc).__name__}: {exc} at {url}"
-        if all(x.startswith("success: ") for x in results.values()):
+        try:
+            homepage = fetch(base.rstrip("/") + "/").decode("utf-8")
+            routes = article_links(homepage)
+            if not routes:
+                raise RuntimeError("no article routes found on public homepage")
+            for post in posts:
+                title = article_title(post)
+                href = routes.get(title)
+                if not href:
+                    results[post] = "article absent from public homepage: " + title
+                    continue
+                url = base.rstrip("/") + href
+                try:
+                    page = html.unescape(fetch(url).decode("utf-8"))
+                    results[post] = ("success: " if title in page else "missing title: ") + url
+                except Exception as exc:
+                    results[post] = f"{type(exc).__name__}: {exc} at {url}"
+        except Exception as exc:
+            results = {post: f"homepage unavailable: {type(exc).__name__}: {exc}" for post in posts}
+        if all(value.startswith("success: ") for value in results.values()):
             return results, ""
         if time.monotonic() >= deadline:
-            return results, "site page unreachable or expected title absent"
+            return results, "public site/page unavailable or expected article title absent"
         time.sleep(10)
 
 def report(sha, checks, pages, error):
