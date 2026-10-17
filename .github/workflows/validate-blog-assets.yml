@@ -7,6 +7,7 @@ on:
       - "public/images/blog/**"
       - "scripts/validate_blog_assets.py"
       - ".github/workflows/validate-blog-assets.yml"
+      - "scripts/check_blog_post.py"
   workflow_dispatch:
 
 permissions:
@@ -38,3 +39,12 @@ jobs:
             exit 0
           fi
           python3 scripts/validate_blog_assets.py "${files[@]}"
+          # Run stricter publication-quality checks only on NEW articles; historical
+          # posts remain compatible with the archive schema.
+          if [[ "$EVENT" != "workflow_dispatch" && -n "$BEFORE" && ! "$BEFORE" =~ ^0+$ ]]; then
+            new_files=()
+            while IFS= read -r -d '' p; do new_files+=("$p"); done < <(git diff --diff-filter=A --name-only -z "$BEFORE" "$AFTER" -- 'src/content/blog/')
+            if (( ${#new_files[@]} > 0 )); then
+              python3 scripts/check_blog_post.py "${new_files[@]}"
+            fi
+          fi
