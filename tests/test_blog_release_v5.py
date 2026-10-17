@@ -69,6 +69,27 @@ class ReleaseGateTests(unittest.TestCase):
             _, error = gate.poll_checks("Sggg5/blog", "a"*40, "token", 0)
         self.assertIn("timeout", error)
 
+    def test_unicode_slug_is_url_encoded(self):
+        from urllib.parse import quote
+        title = "沟槽卡箍密封圈仿真"
+        href = "/blog/沟槽卡箍密封圈仿真/"
+        homepage = '<a href="'+href+'"><h3>'+title+'</h3></a>'
+        called = []
+        def stub(url, token=None):
+            called.append(url)
+            if url == "https://example.org/":
+                return homepage.encode("utf-8")
+            self.assertEqual(url, "https://example.org"+quote(href,safe="/%"))
+            return ('<h1>'+title+'</h1>').encode("utf-8")
+        with tempfile.TemporaryDirectory() as d:
+            post = Path(d) / "article.md"
+            post.write_text('---\ntitle: "'+title+'"\n---\nbody\n',encoding="utf-8")
+            with patch.object(gate,"fetch",side_effect=stub):
+                result, error = gate.poll_site("https://example.org", [str(post)], seconds=0)
+            self.assertFalse(error)
+            self.assertTrue(result[str(post)].startswith("success: "))
+            self.assertEqual(len(called),2)
+
     def test_latest_check_overrides_old_success(self):
         runs = [self.result(name) for name in gate.REQUIRED]
         runs += [self.result("Cloudflare Pages", "completed", "failure", 2)]
