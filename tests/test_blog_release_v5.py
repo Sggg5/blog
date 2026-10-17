@@ -7,6 +7,8 @@ from pathlib import Path
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT / "scripts"))
 
 def load(name):
     spec = importlib.util.spec_from_file_location(name, ROOT / "scripts" / (name + ".py"))
@@ -16,6 +18,7 @@ def load(name):
 
 strict = load("check_blog_post")
 gate = load("verify_blog_release")
+routes = load("article_routes")
 
 class StrictCoverTests(unittest.TestCase):
     def test_vp8x_size(self):
@@ -31,6 +34,14 @@ class StrictCoverTests(unittest.TestCase):
             post.write_text("abc", encoding="utf-8")
             with self.assertRaises(ValueError):
                 strict.parse(post)
+
+class RouteTests(unittest.TestCase):
+    def test_real_rendered_slug_over_raw_filename(self):
+        homepage = '<a href="/blog/epdm沟槽卡箍密封圈仿真怎么做从螺栓收紧到卸载接触压力/"><h3>EPDM沟槽卡箍密封圈仿真怎么做：从螺栓收紧到卸载接触压力</h3></a>'
+        links = routes.article_links(homepage)
+        self.assertIn("EPDM沟槽卡箍密封圈仿真怎么做：从螺栓收紧到卸载接触压力", links)
+        path = routes.generated_html_path(next(iter(links.values())))
+        self.assertTrue(str(path).endswith("/epdm沟槽卡箍密封圈仿真怎么做从螺栓收紧到卸载接触压力/index.html"))
 
 class ReleaseGateTests(unittest.TestCase):
     def result(self, name, status="completed", conclusion="success", id=1):
