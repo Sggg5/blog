@@ -77,7 +77,7 @@ def poll_site(base, posts, seconds=150):
                 if not href:
                     results[post] = "article absent from public homepage: " + title
                     continue
-                url = base.rstrip("/") + href
+                url = base.rstrip("/") + quote(href, safe="/%")
                 try:
                     page = html.unescape(fetch(url).decode("utf-8"))
                     results[post] = ("success: " if title in page else "missing title: ") + url
