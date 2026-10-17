@@ -15,6 +15,9 @@ on:
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/check-astro-build.yml"
+      - "scripts/check_blog_post.py"
+      - "scripts/verify_blog_release.py"
+      - "tests/test_blog_release_v5.py"
   workflow_dispatch:
 
 permissions:
@@ -31,6 +34,10 @@ jobs:
         with:
           node-version: "22"
           cache: "npm"
+      - name: Test blog release scripts
+        run: |
+          python3 -m py_compile scripts/check_blog_post.py scripts/verify_blog_release.py
+          python3 -m unittest discover -s tests -p 'test_blog_release_v5.py' -v
       - name: Install dependencies
         run: npm ci
       - name: Build static Astro pages
