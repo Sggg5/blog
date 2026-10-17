@@ -1,0 +1,37 @@
+name: Verify Blog Production Release
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/blog/**/*.md"
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: "Existing src/content/blog/*.md path to verify"
+        required: true
+        type: string
+permissions:
+  contents: read
+  checks: read
+concurrency:
+  group: blog-release-${{ github.sha }}
+  cancel-in-progress: false
+jobs:
+  verify-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify check-runs on exact commit and published HTML
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BEFORE: ${{ github.event.before }}
+          POST_PATH: ${{ inputs.post_path }}
+        run: |
+          set -euo pipefail
+          python3 scripts/verify_blog_release.py --sha "$GITHUB_SHA" \
+            --before "$BEFORE" --post "$POST_PATH" \
+            --site "https://blog.sggg.cc.cd"
