@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">砂带粒度与成品粗糙度之间的工艺关系</title>
+  <desc id="desc">从磨料粒度经过初始表面、设备条件、砂带磨损、测量设置影响后才得到Ra和Rz实测结果，不存在简单一对一换算。</desc>
+  <rect width="1200" height="640" rx="24" fill="#f8fbfd"/>
+  <text x="60" y="73" font-family="Arial,Microsoft YaHei,sans-serif" font-size="35" font-weight="700" fill="#163f72">砂纸目数不能直接换算成 Ra</text>
+  <text x="60" y="109" font-family="Arial,Microsoft YaHei,sans-serif" font-size="21" fill="#667e96">必须通过工艺条件和真实测量建立对应关系</text>
+  <g font-family="Arial,Microsoft YaHei,sans-serif" text-anchor="middle">
+    <rect x="52" y="184" width="255" height="158" rx="18" fill="#deecf7" stroke="#7199bd" stroke-width="2"/>
+    <text x="180" y="234" font-size="26" fill="#1b4a76" font-weight="700">磨料规格</text>
+    <text x="180" y="276" font-size="22" fill="#315f83">P240 / P400</text>
+    <text x="180" y="307" font-size="20" fill="#315f83">磨粒粒径分布</text>
+    <rect x="472" y="157" width="258" height="215" rx="18" fill="#e8f0f7" stroke="#7396b7" stroke-width="2"/>
+    <text x="600" y="206" font-size="26" fill="#1b4a76" font-weight="700">加工过程</text>
+    <text x="600" y="246" font-size="20" fill="#315f83">起始缺陷 / 焊缝</text>
+    <text x="600" y="279" font-size="20" fill="#315f83">砂带磨损 / 压力</text>
+    <text x="600" y="312" font-size="20" fill="#315f83">线速 / 冷却 / 进给</text>
+    <rect x="895" y="184" width="251" height="158" rx="18" fill="#d9ebe9" stroke="#599d91" stroke-width="2"/>
+    <text x="1020" y="234" font-size="26" fill="#14564f" font-weight="700">实测结果</text>
+    <text x="1020" y="276" font-size="22" fill="#26756b">Ra / Rz / 外观</text>
+    <text x="1020" y="307" font-size="20" fill="#26756b">逐点验收、记录</text>
+  </g>
+  <g stroke="#477da4" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M316 263 H453"/><path d="M447 254 L458 263 L447 272"/>
+    <path d="M741 263 H875"/><path d="M869 254 L880 263 L869 272"/>
+  </g>
+  <rect x="90" y="434" width="1020" height="111" rx="16" fill="white" stroke="#dce5ec"/>
+  <text x="600" y="477" font-family="Arial,Microsoft YaHei,sans-serif" font-size="24" font-weight="700" fill="#9c4b35" text-anchor="middle">工厂方法：固定设备与工艺 → 试验多组粒度 → 测量分布 → 建立内部数据库</text>
+  <text x="600" y="517" font-family="Arial,Microsoft YaHei,sans-serif" font-size="21" fill="#64788b" text-anchor="middle">测量位置、方向、滤波和评价条件必须保持一致</text>
+  <text x="62" y="601" font-family="Arial,Microsoft YaHei,sans-serif" font-size="19" fill="#6a7d8b">本图为原理示意，不是目数与 Ra 的数值换算曲线</text>
+</svg>
