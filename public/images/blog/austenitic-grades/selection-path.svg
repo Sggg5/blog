@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="625" viewBox="0 0 1200 625" role="img" aria-labelledby="t d">
+<title id="t">奥氏体管材管件选材与质量验证流程</title><desc id="d">环境与介质、候选牌号、制造工艺、标准和材料追溯、最终放行的五环节流程。</desc>
+<rect width="1200" height="625" fill="#f8fafc"/>
+<text x="55" y="66" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="35" font-weight="700" fill="#173a62">从“牌号高低”改为“工况适配”</text>
+<text x="55" y="109" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" fill="#64748b">实际技术评审至少经过以下五关</text>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">
+<g fill="#edf3f9" stroke="#bdd1e4" stroke-width="2">
+<rect x="55" y="160" width="204" height="228" rx="16"/><rect x="276" y="160" width="204" height="228" rx="16"/>
+<rect x="497" y="160" width="204" height="228" rx="16"/><rect x="718" y="160" width="204" height="228" rx="16"/><rect x="939" y="160" width="204" height="228" rx="16"/>
+</g>
+<g fill="#245a91"><circle cx="157" cy="198" r="20"/><circle cx="378" cy="198" r="20"/><circle cx="599" cy="198" r="20"/><circle cx="820" cy="198" r="20"/><circle cx="1041" cy="198" r="20"/></g>
+<g fill="white" font-size="21" font-weight="700" text-anchor="middle"><text x="157" y="205">1</text><text x="378" y="205">2</text><text x="599" y="205">3</text><text x="820" y="205">4</text><text x="1041" y="205">5</text></g>
+<g font-size="23" font-weight="700" fill="#173a62" text-anchor="middle"><text x="157" y="260">介质与环境</text><text x="378" y="260">候选材料</text><text x="599" y="260">制造过程</text><text x="820" y="260">标准与追溯</text><text x="1041" y="260">证据与放行</text></g>
+<g fill="#465e77" font-size="19" text-anchor="middle">
+<text x="157" y="305">氯离子、温度</text><text x="157" y="334">缝隙、清洗工况</text>
+<text x="378" y="305">304L、316L</text><text x="378" y="334">或更高合金候选</text>
+<text x="599" y="305">焊接、冷加工</text><text x="599" y="334">酸洗、钝化</text>
+<text x="820" y="305">牌号、炉号</text><text x="820" y="334">化学成分、批次</text>
+<text x="1041" y="305">取样、检验</text><text x="1041" y="334">风险确认、记录</text>
+</g>
+<path d="M68 445 H1131" stroke="#245a91" stroke-width="3" stroke-dasharray="9 9"/>
+<rect x="64" y="482" width="1072" height="95" rx="14" fill="#e7f3f1" stroke="#a2c7c0"/>
+<text x="99" y="523" font-size="24" font-weight="700" fill="#215e5c">判定原则</text>
+<text x="99" y="555" font-size="21" fill="#304c5b">先看工况，再看牌号；光谱识别不等于产品全面合格，材料等级也不能替代焊后处理。</text>
+</g></svg>
