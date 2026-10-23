@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" role="img" aria-label="焊接背面保护的四阶段质量控制流程">
+<rect width="1200" height="490" rx="18" fill="#f3f7fb"/>
+<text x="46" y="60" font-size="32" font-weight="700" fill="#17437b">背面保护质量门：把“测过氧”变成可追溯的放行证据</text>
+<g font-family="sans-serif">
+<rect x="44" y="115" width="246" height="240" rx="15" fill="#fff" stroke="#4b7eaa" stroke-width="3"/>
+<rect x="332" y="115" width="246" height="240" rx="15" fill="#fff" stroke="#4b7eaa" stroke-width="3"/>
+<rect x="620" y="115" width="246" height="240" rx="15" fill="#fff" stroke="#4b7eaa" stroke-width="3"/>
+<rect x="908" y="115" width="246" height="240" rx="15" fill="#fff" stroke="#4b7eaa" stroke-width="3"/>
+<text x="72" y="160" font-size="26" font-weight="700" fill="#17437b">① 开焊前</text>
+<text x="72" y="210" font-size="21" fill="#344d64">确认气源与封堵</text>
+<text x="72" y="249" font-size="21" fill="#344d64">记录测点和残氧</text>
+<text x="72" y="288" font-size="21" fill="#344d64">达到工艺目标</text>
+<text x="360" y="160" font-size="26" font-weight="700" fill="#17437b">② 焊接中</text>
+<text x="360" y="210" font-size="21" fill="#344d64">保持排气通路</text>
+<text x="360" y="249" font-size="21" fill="#344d64">监控泄漏与波动</text>
+<text x="360" y="288" font-size="21" fill="#344d64">避免背压过高</text>
+<text x="648" y="160" font-size="26" font-weight="700" fill="#17437b">③ 焊接后</text>
+<text x="648" y="210" font-size="21" fill="#344d64">按工艺维持保护</text>
+<text x="648" y="249" font-size="21" fill="#344d64">内窥镜检查焊根</text>
+<text x="648" y="288" font-size="21" fill="#344d64">识别氧化与缺陷</text>
+<text x="936" y="160" font-size="26" font-weight="700" fill="#17437b">④ 放行时</text>
+<text x="936" y="210" font-size="21" fill="#344d64">核对约定外观</text>
+<text x="936" y="249" font-size="21" fill="#344d64">复核检验记录</text>
+<text x="936" y="288" font-size="21" fill="#344d64">超限隔离处置</text>
+</g>
+<path d="M290 235 H332 M578 235 H620 M866 235 H908" stroke="#e58c39" stroke-width="8"/>
+<text x="48" y="416" font-size="22" font-weight="700" fill="#17437b">放行判据 = 已批准的WPS/检验规范 + 实测记录 + 焊根结果</text>
+<text x="48" y="451" font-size="19" fill="#536b81">AWS D18.2的颜色示例不能直接当成所有行业统一的残氧ppm上限。</text>
+</svg>

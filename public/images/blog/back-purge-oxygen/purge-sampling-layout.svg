@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-label="不锈钢管焊接背面充氩的进气、排气和取样布置示意">
+<rect width="1200" height="440" rx="18" fill="#f3f7fb"/>
+<text x="45" y="60" font-size="32" font-weight="700" fill="#17437b">背面充氩：让气体通过焊根区域，而不只是让流量计有读数</text>
+<rect x="200" y="150" width="780" height="155" rx="24" fill="#c9d8e6" stroke="#3d6689" stroke-width="6"/>
+<rect x="200" y="179" width="780" height="98" rx="12" fill="#fff" stroke="#8a9fb4" stroke-width="2"/>
+<rect x="565" y="148" width="14" height="159" fill="#edb86b" opacity=".8"/>
+<text x="515" y="137" font-size="22" fill="#85520f">焊接位置</text>
+<path d="M68 227 H200" stroke="#167cba" stroke-width="12" stroke-linecap="round"/>
+<path d="M183 212 L205 227 L183 242 Z" fill="#167cba"/>
+<text x="50" y="192" font-size="23" fill="#145a89">氩气入口</text>
+<path d="M980 227 H1125" stroke="#167cba" stroke-width="12" stroke-linecap="round"/>
+<path d="M1100 212 L1125 227 L1100 242 Z" fill="#167cba"/>
+<text x="1015" y="191" font-size="23" fill="#145a89">受控排气</text>
+<path d="M815 179 V99 H975" stroke="#e18129" stroke-width="5" fill="none"/>
+<circle cx="815" cy="180" r="9" fill="#e18129"/>
+<rect x="967" y="73" width="175" height="58" rx="9" fill="#fff" stroke="#e18129" stroke-width="3"/>
+<text x="987" y="109" font-size="21" fill="#85520f">残氧分析仪</text>
+<path d="M325 223 H455 M650 223 H770" stroke="#6eaed6" stroke-width="5" stroke-dasharray="18 12"/>
+<text x="288" y="260" font-size="21" fill="#35617c">置换流向</text>
+<text x="45" y="368" font-size="21" fill="#334f68">关键点：封堵有效 · 入口与排气口分开 · 取样点代表焊根 · 防止死角与过压</text>
+<text x="45" y="401" font-size="17" fill="#607b93">示意图仅表示测量布置原理；实际结构、流量与允许残氧由经验证工艺确定。</text>
+</svg>
