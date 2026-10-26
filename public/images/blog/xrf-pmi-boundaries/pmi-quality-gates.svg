@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="不锈钢管件PMI现场检验与复验放行流程">
+<rect width="1200" height="540" fill="#f3f6fa"/><rect x="32" y="32" width="1136" height="476" rx="20" fill="white" stroke="#dce5ee"/>
+<text x="68" y="91" font-size="31" font-weight="bold" fill="#173c67" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">管材管件PMI：从筛查到最终放行</text>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" text-anchor="middle">
+<rect x="68" y="157" width="225" height="114" rx="15" fill="#e7eff9" stroke="#adc6e4"/><text x="180" y="204" font-size="23" fill="#194979">① 核对标识</text><text x="180" y="237" font-size="18" fill="#45647e">炉号 / 批次 / MTC</text>
+<rect x="345" y="157" width="225" height="114" rx="15" fill="#e7eff9" stroke="#adc6e4"/><text x="458" y="204" font-size="23" fill="#194979">② 表面预处理</text><text x="458" y="237" font-size="18" fill="#45647e">洁净 / 接触 / 标样</text>
+<rect x="623" y="157" width="225" height="114" rx="15" fill="#e7eff9" stroke="#adc6e4"/><text x="735" y="204" font-size="23" fill="#194979">③ XRF筛查</text><text x="735" y="237" font-size="18" fill="#45647e">元素 / 不确定度</text>
+<rect x="900" y="157" width="225" height="114" rx="15" fill="#e6f4ed" stroke="#a8d7c2"/><text x="1012" y="204" font-size="23" fill="#166e51">④ 分类处置</text><text x="1012" y="237" font-size="18" fill="#45647e">一致 / 可疑 / 不符</text>
+</g>
+<g stroke="#6f94b8" stroke-width="4" fill="none"><path d="M294 213H341M571 213H619M849 213H895"/></g><g fill="#6f94b8"><path d="M340 205L350 213L340 221ZM618 205L628 213L618 221ZM894 205L904 213L894 221Z"/></g>
+<path d="M1013 274V327H735V355" stroke="#b88338" stroke-width="4" fill="none"/>
+<rect x="590" y="355" width="290" height="94" rx="14" fill="#fff1d9" stroke="#e1bd7e"/><text x="735" y="394" text-anchor="middle" font-size="23" fill="#875916" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">疑难或低碳牌号</text><text x="735" y="425" text-anchor="middle" font-size="18" fill="#875916" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">隔离 → 取样复验 → 记录</text>
+<text x="70" y="470" font-size="18" fill="#596d7f" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif">按风险确定抽检比例；未确认前不放行，保留原始谱图、检测点与追溯信息。</text>
+</svg>
