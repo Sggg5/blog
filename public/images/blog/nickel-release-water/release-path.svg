@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" role="img" aria-label="不锈钢管镍析出与检测的四个不同环节">
+<rect width="1120" height="460" fill="#f4f8fb"/><text x="560" y="54" text-anchor="middle" font-size="29" font-weight="bold" fill="#18334a">材料含镍 ≠ 水中镍迁移量 ≠ 试验合格结论</text>
+<g font-family="sans-serif" font-size="20" fill="#18334a">
+<rect x="35" y="110" rx="18" width="238" height="170" fill="#dcebf5" stroke="#4a84a9" stroke-width="2"/>
+<text x="154" y="153" text-anchor="middle" font-weight="bold">① 材料成分</text><text x="154" y="192" text-anchor="middle">304 / 316L</text><text x="154" y="225" text-anchor="middle" font-size="17">合金中含有镍</text>
+<rect x="307" y="110" rx="18" width="238" height="170" fill="#e1f3f1" stroke="#3d9d94" stroke-width="2"/>
+<text x="426" y="153" text-anchor="middle" font-weight="bold">② 表面状态</text><text x="426" y="192" text-anchor="middle">焊接 / 酸洗 / 漂洗</text><text x="426" y="225" text-anchor="middle" font-size="17">影响初期释放</text>
+<rect x="579" y="110" rx="18" width="238" height="170" fill="#fff0d8" stroke="#d59b3d" stroke-width="2"/>
+<text x="698" y="153" text-anchor="middle" font-weight="bold">③ 规定浸泡</text><text x="698" y="192" text-anchor="middle">水质 / 时间 / 温度</text><text x="698" y="225" text-anchor="middle" font-size="17">空白对照与样品</text>
+<rect x="851" y="110" rx="18" width="234" height="170" fill="#f1e9f8" stroke="#9773b8" stroke-width="2"/>
+<text x="968" y="153" text-anchor="middle" font-weight="bold">④ 分析与判定</text><text x="968" y="192" text-anchor="middle">水中镍浓度</text><text x="968" y="225" text-anchor="middle" font-size="17">按适用规则评价</text>
+</g>
+<g fill="none" stroke="#597a8b" stroke-width="4" stroke-linecap="round"><path d="M275 193h27m-9-8 9 8-9 8"/><path d="M547 193h27m-9-8 9 8-9 8"/><path d="M819 193h27m-9-8 9 8-9 8"/></g>
+<rect x="55" y="332" width="1010" height="76" rx="12" fill="#ffffff" stroke="#cadce7"/><text x="560" y="365" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#18334a">质量控制要点：记录样品表面积、浸泡液体积、取样时点与分析方法</text><text x="560" y="392" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#536e7e">示意图不代表任何标准的固定浸泡参数或限值</text>
+</svg>
