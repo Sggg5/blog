@@ -7,7 +7,7 @@ tags:
   - 不锈钢管
   - 晶粒度
   - 金相检验
-  - GB/T 6394
+  - 晶粒度标准
   - 质量管理
 coverImage: "/images/blog/grain-size-metallography/cover.webp"
 coverAlt: "不锈钢管材金相检测实验室，技术人员通过显微镜观察金属晶粒组织，旁边摆放磨抛试样"
