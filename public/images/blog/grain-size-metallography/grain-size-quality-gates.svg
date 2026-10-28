@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-label="不锈钢管材金相晶粒度检测工作流">
+<rect width="1200" height="510" rx="22" fill="#f3f8fc"/>
+<text x="56" y="60" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="33" font-weight="700" fill="#15334c">不锈钢管材晶粒度检验：六道质量关</text>
+<g font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="23" text-anchor="middle">
+<rect x="55" y="108" width="340" height="112" rx="15" fill="#d8e9f5" stroke="#86b0c9"/>
+<text x="225" y="150" fill="#163d59" font-weight="700">01 确认检验依据</text><text x="225" y="186" font-size="18" fill="#365e76">产品要求 / GB/T 6394</text>
+<rect x="430" y="108" width="340" height="112" rx="15" fill="#d8e9f5" stroke="#86b0c9"/>
+<text x="600" y="150" fill="#163d59" font-weight="700">02 定义取样位置</text><text x="600" y="186" font-size="18" fill="#365e76">母材 / 焊缝 / 热影响区</text>
+<rect x="805" y="108" width="340" height="112" rx="15" fill="#d8e9f5" stroke="#86b0c9"/>
+<text x="975" y="150" fill="#163d59" font-weight="700">03 规范制样</text><text x="975" y="186" font-size="18" fill="#365e76">磨抛 / 腐蚀 / 晶界清晰</text>
+<rect x="55" y="280" width="340" height="112" rx="15" fill="#e4f2ea" stroke="#94c2a5"/>
+<text x="225" y="322" fill="#21513b" font-weight="700">04 选对测量方法</text><text x="225" y="358" font-size="18" fill="#43715a">比较 / 面积 / 截点</text>
+<rect x="430" y="280" width="340" height="112" rx="15" fill="#e4f2ea" stroke="#94c2a5"/>
+<text x="600" y="322" fill="#21513b" font-weight="700">05 多视场复核</text><text x="600" y="358" font-size="18" fill="#43715a">标定 / 计数 / 代表性</text>
+<rect x="805" y="280" width="340" height="112" rx="15" fill="#e4f2ea" stroke="#94c2a5"/>
+<text x="975" y="322" fill="#21513b" font-weight="700">06 对照接收准则</text><text x="975" y="358" font-size="18" fill="#43715a">报告 G 值与合同要求</text>
+</g>
+<g fill="none" stroke="#69889e" stroke-width="5" stroke-linecap="round"><path d="M402 165 H421 M777 165 H795 M402 336 H421 M777 336 H795"/></g>
+<g fill="#69889e"><path d="M420 158 l10 7 -10 7z M794 158 l10 7 -10 7z M420 329 l10 7 -10 7z M794 329 l10 7 -10 7z"/></g>
+<text x="600" y="458" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="21" fill="#3b5668" text-anchor="middle">方法标准解决“怎么测”；产品标准与技术协议解决“合不合格”</text>
+</svg>

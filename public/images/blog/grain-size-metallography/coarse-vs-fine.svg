@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="示意图：粗晶与细晶的相对面积和晶粒度号关系">
+<rect width="1200" height="520" rx="22" fill="#f4f8fb"/>
+<text x="60" y="63" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="32" font-weight="700" fill="#123149">晶粒度号 G 与晶粒大小：方向关系（示意，非标准评级图）</text>
+<rect x="58" y="104" width="520" height="305" rx="14" fill="#fff" stroke="#c8d8e4" stroke-width="2"/>
+<rect x="622" y="104" width="520" height="305" rx="14" fill="#fff" stroke="#c8d8e4" stroke-width="2"/>
+<g fill="none" stroke="#386b8b" stroke-width="4" stroke-linejoin="round">
+<path d="M75 122 L250 115 L320 213 L260 390 L75 390 Z M250 115 L435 122 L557 208 L450 385 L260 390 M320 213 L557 208 M75 250 L320 213 M435 122 L450 385"/>
+</g>
+<g fill="none" stroke="#386b8b" stroke-width="3" stroke-linejoin="round">
+<path d="M640 120 L748 120 L750 215 L640 215 M748 120 L846 120 L846 215 L750 215 M846 120 L946 120 L946 215 L846 215 M946 120 L1042 120 L1042 215 L946 215 M1042 120 L1124 120 L1124 215 L1042 215 M640 215 L748 215 L748 306 L640 306 M748 215 L846 215 L846 306 L748 306 M846 215 L946 215 L946 306 L846 306 M946 215 L1042 215 L1042 306 L946 306 M1042 215 L1124 215 L1124 306 L1042 306 M640 306 L748 306 L748 392 L640 392 M748 306 L846 306 L846 392 L748 392 M846 306 L946 306 L946 392 L846 392 M946 306 L1042 306 L1042 392 L946 392 M1042 306 L1124 306 L1124 392 L1042 392"/>
+</g>
+<text x="320" y="443" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="25" text-anchor="middle" fill="#183e57">相对粗晶：单位面积晶粒较少</text>
+<text x="882" y="443" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="25" text-anchor="middle" fill="#183e57">相对细晶：单位面积晶粒较多</text>
+<text x="600" y="492" font-family="Noto Sans CJK SC,Arial,sans-serif" font-size="20" text-anchor="middle" fill="#516779">同一测量体系下，G 值增大通常表示平均晶粒更细；不可仅凭本图判定实际级别</text>
+</svg>
