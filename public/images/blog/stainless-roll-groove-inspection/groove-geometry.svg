@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-label="沟槽管端A、B、C、D、F、T尺寸示意">
+<rect width="1200" height="610" fill="#f5f8fc"/><rect x="36" y="34" width="1128" height="542" rx="24" fill="white" stroke="#dbe4ed" stroke-width="2"/>
+<text x="75" y="92" font-family="Noto Sans CJK SC, sans-serif" font-size="34" font-weight="bold" fill="#16334c">滚槽管端关键尺寸：先识别轮廓，再对照系统图纸</text>
+<text x="75" y="130" font-family="Noto Sans CJK SC, sans-serif" font-size="20" fill="#587189">示意非比例图，具体公差按适用管材外径、壁厚及沟槽系统核定</text>
+<!-- upper wall cross-section; pipe mouth at x=160; groove x=450-570 -->
+<path d="M160 214 H420 Q440 214 449 240 Q458 266 477 266 H540 Q558 266 570 240 Q582 214 602 214 H1030 V288 H602 Q582 288 570 315 Q558 338 540 338 H477 Q458 338 449 315 Q440 288 420 288 H160 Z" fill="#c3d1dd" stroke="#335a76" stroke-width="4"/>
+<path d="M160 288 H420 Q440 288 449 315 Q458 338 477 338 H540 Q558 338 570 315 Q582 288 602 288 H1030" fill="none" stroke="#7891a5" stroke-width="3" stroke-dasharray="8 7"/>
+<line x1="160" y1="178" x2="160" y2="366" stroke="#365d78" stroke-width="3"/><text x="125" y="394" font-size="20" fill="#375d75">管端</text>
+<g stroke="#e07d42" stroke-width="3" fill="none"><line x1="160" y1="175" x2="450" y2="175"/><path d="M173 166 L160 175 L173 184 M437 166 L450 175 L437 184"/><line x1="450" y1="175" x2="570" y2="175"/><path d="M463 166 L450 175 L463 184 M557 166 L570 175 L557 184"/></g>
+<text x="292" y="165" font-size="27" fill="#a95121" font-weight="bold">A</text><text x="504" y="165" font-size="27" fill="#a95121" font-weight="bold">B</text>
+<line x1="520" y1="270" x2="520" y2="213" stroke="#be4b54" stroke-width="3"/><text x="533" y="245" font-size="25" fill="#be4b54">D（参考）</text>
+<line x1="750" y1="211" x2="750" y2="291" stroke="#285e88" stroke-width="3"/><path d="M743 223 L750 211 L757 223 M743 279 L750 291 L757 279" stroke="#285e88" stroke-width="2" fill="none"/><text x="765" y="258" font-size="24" fill="#285e88">T</text>
+<g font-family="Noto Sans CJK SC, sans-serif" font-size="23" fill="#233f55">
+<text x="86" y="460">A  密封座区（端口到沟槽）</text><text x="620" y="460">B  槽宽（配合卡箍键）</text>
+<text x="86" y="502">C  槽底外径（周向多点测）</text><text x="620" y="502">D  槽深（通常作参考值）</text>
+<text x="86" y="543">F  管端扩口最大外径</text><text x="620" y="543">T  允许壁厚及成形余量</text>
+</g><rect x="1008" y="205" width="34" height="98" rx="7" fill="#dce8f2" stroke="#90aabd"/>
+</svg>
