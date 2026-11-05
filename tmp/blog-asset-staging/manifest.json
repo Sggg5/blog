@@ -1,5 +1,5 @@
 {
-  "target_path": "public/images/blog/weld-distortion-control/cover.webp",
+  "target_path": "public/images/blog/weld-distortion-control/cover-verified.webp",
   "expected_size": 20262,
   "expected_git_blob_sha": "392ef6254a7bf9144013c5fc6851beacfe032bae",
   "chunks": [
