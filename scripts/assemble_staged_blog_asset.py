@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Assemble staged Base64 WebP chunks after strict size, geometry and Git blob SHA checks."""
+"""Assemble staged binary WebP chunks after strict per-chunk and final Git blob SHA checks."""
 from __future__ import annotations
 import argparse
-import base64
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,30 +43,44 @@ def main() -> None:
     target_path = (ROOT / target).resolve()
     if ASSET_ROOT not in target_path.parents:
         raise ValueError("target_path escapes public/images/blog")
-    count = manifest.get("chunk_count")
-    size = manifest.get("expected_size")
+    chunks = manifest.get("chunks")
+    if not isinstance(chunks, list) or not 1 <= len(chunks) <= 100:
+        raise ValueError("chunks must be a list of 1..100 binary chunk descriptors")
+    pieces = []
+    for index, item in enumerate(chunks):
+        if not isinstance(item, dict):
+            raise ValueError(f"chunk descriptor {index} is invalid")
+        name = item.get("name")
+        expected_size = item.get("size")
+        expected_sha = item.get("git_blob_sha")
+        if name != f"chunk-{index:03d}.bin":
+            raise ValueError(f"unexpected chunk order/name at index {index}")
+        if not isinstance(expected_size, int) or expected_size < 1:
+            raise ValueError(f"invalid size for {name}")
+        if not isinstance(expected_sha, str) or len(expected_sha) != 40 or any(c not in "0123456789abcdef" for c in expected_sha):
+            raise ValueError(f"invalid Git blob SHA for {name}")
+        chunk_path = STAGING / name
+        if not chunk_path.is_file() or chunk_path.is_symlink():
+            raise ValueError(f"missing or unsafe chunk: {name}")
+        data = chunk_path.read_bytes()
+        if len(data) != expected_size:
+            raise ValueError(f"chunk size mismatch for {name}: expected {expected_size}, got {len(data)}")
+        actual_chunk_sha = git_blob_sha(data)
+        if actual_chunk_sha != expected_sha:
+            raise ValueError(f"chunk Git blob SHA mismatch for {name}: expected {expected_sha}, got {actual_chunk_sha}")
+        pieces.append(data)
+    data = b"".join(pieces)
+    expected_size = manifest.get("expected_size")
     expected_sha = manifest.get("expected_git_blob_sha")
-    if not isinstance(count, int) or not 1 <= count <= 100:
-        raise ValueError("chunk_count must be 1..100")
-    if not isinstance(size, int) or size < 1:
+    if not isinstance(expected_size, int) or expected_size < 1:
         raise ValueError("expected_size must be positive")
     if not isinstance(expected_sha, str) or len(expected_sha) != 40 or any(c not in "0123456789abcdef" for c in expected_sha):
         raise ValueError("expected_git_blob_sha must be a lowercase SHA-1")
-    encoded = []
-    for index in range(count):
-        chunk_path = STAGING / f"chunk-{index:03d}.b64"
-        if not chunk_path.is_file() or chunk_path.is_symlink():
-            raise ValueError(f"missing or unsafe chunk: {chunk_path.name}")
-        chunk = chunk_path.read_text(encoding="ascii").strip()
-        if not chunk or any(ch.isspace() for ch in chunk):
-            raise ValueError(f"empty/whitespace in {chunk_path.name}")
-        encoded.append(chunk)
-    data = base64.b64decode("".join(encoded), validate=True)
     actual_sha = git_blob_sha(data)
-    if len(data) != size:
-        raise ValueError(f"size mismatch: expected {size}, got {len(data)}")
+    if len(data) != expected_size:
+        raise ValueError(f"assembled size mismatch: expected {expected_size}, got {len(data)}")
     if actual_sha != expected_sha:
-        raise ValueError(f"Git blob SHA mismatch: expected {expected_sha}, got {actual_sha}")
+        raise ValueError(f"assembled Git blob SHA mismatch: expected {expected_sha}, got {actual_sha}")
     width, height = webp_dimensions(data)
     if width < 960 or height < 540 or abs(width / height - 16 / 9) > 0.03:
         raise ValueError(f"cover must be >=960x540 and 16:9, got {width}x{height}")
@@ -84,7 +98,8 @@ def main() -> None:
         "size": len(data),
         "git_blob_sha": actual_sha,
         "width": width,
-        "height": height
+        "height": height,
+        "chunks": len(chunks)
     }, ensure_ascii=False))
 
 if __name__ == "__main__":
