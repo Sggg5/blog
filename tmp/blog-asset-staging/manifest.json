@@ -1,0 +1,87 @@
+{
+  "target_path": "public/images/blog/tensile-interim-check/cover.webp",
+  "expected_size": 35574,
+  "expected_git_blob_sha": "50d2fa84979c78d0219f5ef4fdb0308502057bdd",
+  "chunks": [
+    {
+      "name": "chunk-000.bin",
+      "size": 2250,
+      "git_blob_sha": "0746dc893340457740160ec9eaca38f2ba71274e"
+    },
+    {
+      "name": "chunk-001.bin",
+      "size": 2250,
+      "git_blob_sha": "454923074795dddbed135c6275553b1f294e317a"
+    },
+    {
+      "name": "chunk-002.bin",
+      "size": 2250,
+      "git_blob_sha": "286b74d6576d8f11c05d6062c04bfa73889dbcba"
+    },
+    {
+      "name": "chunk-003.bin",
+      "size": 2250,
+      "git_blob_sha": "e8717d77a5a27e93bab1ae6f9b9afd2b779f3cda"
+    },
+    {
+      "name": "chunk-004.bin",
+      "size": 2250,
+      "git_blob_sha": "413a217815e8353cf5ad6b37c416aeb9c31e9be3"
+    },
+    {
+      "name": "chunk-005.bin",
+      "size": 2250,
+      "git_blob_sha": "554685195e346a74843bdc813fdbb4317cf3b2c5"
+    },
+    {
+      "name": "chunk-006.bin",
+      "size": 2250,
+      "git_blob_sha": "160513252363be8fe78f245948d4c15b6e4c8cc3"
+    },
+    {
+      "name": "chunk-007.bin",
+      "size": 2250,
+      "git_blob_sha": "6f4307ad616bbc4a077b5d0dbfd421ee8798f488"
+    },
+    {
+      "name": "chunk-008.bin",
+      "size": 2250,
+      "git_blob_sha": "a98ad787d6de1fbb3b4b8bae021c11d32db7e4e0"
+    },
+    {
+      "name": "chunk-009.bin",
+      "size": 2250,
+      "git_blob_sha": "e10ecfc83d44d2be8dd117d0aa131fe5c4747ad2"
+    },
+    {
+      "name": "chunk-010.bin",
+      "size": 2250,
+      "git_blob_sha": "519c3a93e6defecd1874d7ddebcb586400e620d1"
+    },
+    {
+      "name": "chunk-011.bin",
+      "size": 2250,
+      "git_blob_sha": "12b84ea49849f2a6b9270188cfadf034a213b245"
+    },
+    {
+      "name": "chunk-012.bin",
+      "size": 2250,
+      "git_blob_sha": "fe78637fb3cb7075c43fb81965d8c158af991e9f"
+    },
+    {
+      "name": "chunk-013.bin",
+      "size": 2250,
+      "git_blob_sha": "54633d8129fcc4594ac615384ec55bcbec5f4967"
+    },
+    {
+      "name": "chunk-014.bin",
+      "size": 2250,
+      "git_blob_sha": "e8814cd72ff42b3ba0d4dedafad6f0ee92b95e69"
+    },
+    {
+      "name": "chunk-015.bin",
+      "size": 1824,
+      "git_blob_sha": "8f4eb99c4041324cae3ab91be255d18a89612e8a"
+    }
+  ]
+}

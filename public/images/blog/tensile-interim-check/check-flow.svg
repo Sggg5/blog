@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<title id="title">拉伸试验机期间核查流程</title><desc id="desc">从风险触发、状态确认、参考器具、核查点、重复测量、数据分析到放行或暂停调查的流程示意。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="780" rx="26" fill="#f8fafc"/>
+<text x="600" y="58" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="32" font-weight="700" fill="#0f172a">拉伸试验机期间核查的执行流程</text>
+<text x="600" y="94" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="18" fill="#475569">按设备风险和使用情况确定方案；期间核查不替代校准</text>
+<g font-family="Microsoft YaHei,Arial,sans-serif">
+<rect x="260" y="126" width="680" height="66" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><text x="600" y="153" text-anchor="middle" font-size="22" font-weight="700" fill="#075985">1. 识别触发条件</text><text x="600" y="178" text-anchor="middle" font-size="16" fill="#0c4a6e">使用频率、历史校准、质控结果、维修或异常事件</text>
+<path d="M600 193 V216" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="224" width="680" height="66" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/><text x="600" y="251" text-anchor="middle" font-size="22" font-weight="700" fill="#3730a3">2. 确认设备状态</text><text x="600" y="276" text-anchor="middle" font-size="16" fill="#312e81">检查外观、连接、夹具、安装、环境和程序版本</text>
+<path d="M600 291 V314" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="322" width="680" height="66" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/><text x="600" y="349" text-anchor="middle" font-size="22" font-weight="700" fill="#065f46">3. 选择参考器具</text><text x="600" y="374" text-anchor="middle" font-size="16" fill="#064e3b">确认量程、溯源性、不确定度及安装适用性</text>
+<path d="M600 389 V412" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="420" width="680" height="66" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="2"/><text x="600" y="447" text-anchor="middle" font-size="22" font-weight="700" fill="#9a3412">4. 确定代表性核查点</text><text x="600" y="472" text-anchor="middle" font-size="16" fill="#7c2d12">覆盖常用工作区间，并保持加载和读数条件一致</text>
+<path d="M600 487 V510" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="518" width="680" height="66" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/><text x="600" y="545" text-anchor="middle" font-size="22" font-weight="700" fill="#334155">5. 重复加载并完整记录</text><text x="600" y="570" text-anchor="middle" font-size="16" fill="#475569">记录参考值、设备示值、重复结果、人员和环境</text>
+<path d="M600 585 V608" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="616" width="680" height="66" rx="14" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/><text x="600" y="643" text-anchor="middle" font-size="22" font-weight="700" fill="#9d174d">6. 评价偏差、重复性与趋势</text><text x="600" y="668" text-anchor="middle" font-size="16" fill="#831843">按实验室批准的准则判定，不套用未经验证的通用限值</text>
+<rect x="130" y="710" width="440" height="48" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="350" y="741" text-anchor="middle" font-size="19" font-weight="700" fill="#166534">满足准则：记录并继续监控</text>
+<rect x="630" y="710" width="440" height="48" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/><text x="850" y="741" text-anchor="middle" font-size="19" font-weight="700" fill="#991b1b">异常或超限：暂停、调查并评估影响</text>
+</g></svg>

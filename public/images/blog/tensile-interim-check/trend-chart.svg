@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+<title id="title">期间核查趋势图示意</title><desc id="desc">展示相对示值偏差随核查次数变化，包含中心线、警戒线和行动限，强调趋势判定而非单次合格。</desc>
+<rect width="1200" height="660" rx="24" fill="#ffffff"/>
+<text x="600" y="52" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="30" font-weight="700" fill="#0f172a">期间核查结果的趋势观察</text>
+<text x="600" y="84" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="17" fill="#64748b">示意数据仅用于说明趋势识别，不代表任何设备的通用限值</text>
+<g stroke="#e2e8f0" stroke-width="1"><path d="M150 150 H1080 M150 230 H1080 M150 310 H1080 M150 390 H1080 M150 470 H1080"/></g>
+<g stroke="#94a3b8" stroke-width="2"><path d="M150 130 V500 H1080"/></g>
+<g font-family="Microsoft YaHei,Arial,sans-serif" fill="#475569" font-size="16"><text x="132" y="156" text-anchor="end">偏高</text><text x="132" y="316" text-anchor="end">0</text><text x="132" y="476" text-anchor="end">偏低</text><text x="615" y="548" text-anchor="middle" font-size="18">核查次数（顺序）</text><text x="40" y="310" transform="rotate(-90 40 310)" text-anchor="middle" font-size="18">相对示值偏差（示意）</text></g>
+<g fill="none" stroke-width="2.5" stroke-dasharray="9 7"><path d="M150 190 H1080" stroke="#ea580c"/><path d="M150 430 H1080" stroke="#ea580c"/><path d="M150 150 H1080" stroke="#dc2626"/><path d="M150 470 H1080" stroke="#dc2626"/></g>
+<path d="M150 310 H1080" stroke="#64748b" stroke-width="2.5"/>
+<g font-family="Microsoft YaHei,Arial,sans-serif" font-size="16"><text x="1090" y="155" fill="#dc2626">上行动限</text><text x="1090" y="195" fill="#c2410c">上警戒线</text><text x="1090" y="315" fill="#475569">中心线</text><text x="1090" y="435" fill="#c2410c">下警戒线</text><text x="1090" y="475" fill="#dc2626">下行动限</text></g>
+<polyline points="180,292 270,280 360,300 450,268 540,250 630,245 720,225 810,210 900,185 990,170" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#2563eb" stroke="#ffffff" stroke-width="3"><circle cx="180" cy="292" r="8"/><circle cx="270" cy="280" r="8"/><circle cx="360" cy="300" r="8"/><circle cx="450" cy="268" r="8"/><circle cx="540" cy="250" r="8"/><circle cx="630" cy="245" r="8"/><circle cx="720" cy="225" r="8"/><circle cx="810" cy="210" r="8"/><circle cx="900" cy="185" r="8"/><circle cx="990" cy="170" r="8"/></g>
+<path d="M820 135 L900 178" stroke="#0f172a" stroke-width="2"/><rect x="650" y="100" width="250" height="44" rx="10" fill="#eff6ff" stroke="#93c5fd"/><text x="775" y="128" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="17" fill="#1e40af">连续偏移：即使未超限也应调查</text>
+<g font-family="Microsoft YaHei,Arial,sans-serif" fill="#64748b" font-size="15"><text x="180" y="520" text-anchor="middle">1</text><text x="270" y="520" text-anchor="middle">2</text><text x="360" y="520" text-anchor="middle">3</text><text x="450" y="520" text-anchor="middle">4</text><text x="540" y="520" text-anchor="middle">5</text><text x="630" y="520" text-anchor="middle">6</text><text x="720" y="520" text-anchor="middle">7</text><text x="810" y="520" text-anchor="middle">8</text><text x="900" y="520" text-anchor="middle">9</text><text x="990" y="520" text-anchor="middle">10</text></g>
+<rect x="160" y="575" width="880" height="52" rx="12" fill="#f8fafc" stroke="#cbd5e1"/><text x="600" y="608" text-anchor="middle" font-family="Microsoft YaHei,Arial,sans-serif" font-size="18" fill="#334155">警戒线、行动限及中心线须由实验室依据风险、校准结果和方法要求确定</text>
+</svg>
